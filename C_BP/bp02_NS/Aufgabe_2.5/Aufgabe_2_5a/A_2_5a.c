@@ -8,7 +8,7 @@ int main() {
     // Zufallszahl generieren und speichern
     srand((unsigned int)time(NULL));
 
-    //int myNumber = rand() % 10;#
+    //int myNumber = rand() % 10;
     int myNumber = 8;
 
     int index = 1;

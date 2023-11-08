@@ -5,7 +5,6 @@
 int main() {
 
     // dritte Potenz
-
     double x = 5.0;
     double y = pow (x,3);
 
@@ -13,9 +12,7 @@ int main() {
 
     // Tagens
     printf("Tangens:\n");
-
     double tangent = tan(1.5 * M_PI / 180);
-
     printf("%e\n", tangent);
 
     // natürliche Log
