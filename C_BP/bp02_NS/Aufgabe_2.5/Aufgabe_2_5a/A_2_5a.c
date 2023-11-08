@@ -7,13 +7,13 @@ int main() {
     // Zufallszahl generieren und speichern
     srand((unsigned int)time(NULL));
 
-    int myNumber = rand() % 9;
+    int myNumber = rand() % 10;
 
     int index = 1;
 
     while(index <= myNumber) {
         printf("%e", pow(index, 0.5));
-        index = index + 1;
+        ++index;
     }
 
     return 0;
