@@ -11,7 +11,7 @@ int main() {
 
     printf("my int: %i\n", i);
 
-    println("Teilbar durch 5?");
+    printf("Teilbar durch 5?");
     if ( i <= 20000) {
 
         if (i % 5 == 0) {
@@ -24,6 +24,13 @@ int main() {
             printf("1");
         }
     }
+
+    else {
+        printf("2");
+
+    }
+
+    printf("\nEnde");
 
     return 0;
 
