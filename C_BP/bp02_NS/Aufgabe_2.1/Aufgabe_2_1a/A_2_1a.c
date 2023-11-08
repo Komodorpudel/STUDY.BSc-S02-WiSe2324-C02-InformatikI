@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
     
@@ -11,7 +12,13 @@ int main() {
 
     printf("Random number: %d\n ", number);
 
-    // check
+    if (number >= 100 && number < 1000) {
+        printf("number is three digit");
+    }
+
+    else {
+        printf("numer is not three digit");
+    }
 
     return 0;
 }
