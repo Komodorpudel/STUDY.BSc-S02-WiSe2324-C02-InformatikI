@@ -11,7 +11,6 @@ void print_digit_array(char v[], int len_v) {
     }
 }
 
-
 int main() {
 
     char array[] = {'1', ':', '7', 'A', '3', '\0'};
