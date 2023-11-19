@@ -3,7 +3,9 @@
 // Functions
 int get_bit_value_at(int pos, int x);
 void print_bit_sequence(int x);
-int implication (int x, int y) ;
+int implication (int x, int y);
+
+// --------------
 
 int main()
 {
@@ -14,7 +16,7 @@ int main()
     //int x = 8;
     // int y = 3;
 
-    printf("Bit-Value an pos 3 von x = 8 :%i\n", get_bit_value_at(3, x));
+    printf("Bit-Value an pos 3 von x:%i\n", get_bit_value_at(3, x));
     printf("Bit-Value an pos 2 von x:%i\n", get_bit_value_at(2, x));
     printf("Bit-Value an pos 1 von x:%i\n", get_bit_value_at(1, x));
     printf("Bit-Value an pos 0 von x:%i\n", get_bit_value_at(0, x));
@@ -30,6 +32,8 @@ int main()
 
     return 0;
 }
+
+// --------------
 
 int get_bit_value_at(int pos, int x)
 {
@@ -70,21 +74,5 @@ int implication (int x, int y)
     return (~x) | y;
 
 }
-
-// 11110011101110101010111011101100 //Simon
-// 01010101011000010011100001001010 //Simon
-
-// 01010101011000010011100001001011
-// 01011101011001010111100101011011
-
-
-// Arber:
-//11110011101110101010111011101100
-//01010101011000010011100001001010
-//Implication:
-//01010101011000010011100001001010
-
-//01011101011001010111100101011011
-//01011101011001010111100101011011
 
 // ---------------
