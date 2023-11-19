@@ -5,10 +5,19 @@ int get_bit_value_at(int pos, int x);
 void print_bit_sequence(int x);
 int implication (int x, int y) ;
 
-int main() {
+int main()
+{
 
     int x = -205869332; // int-Variable x mit dem Wert -205869332
     int y = 1432434762; // int-Variable y mit dem Wert 1432434762
+
+    //int x = 8;
+    // int y = 3;
+
+    printf("Bit-Value an pos 3 von x = 8 :%i\n", get_bit_value_at(3, x));
+    printf("Bit-Value an pos 2 von x:%i\n", get_bit_value_at(2, x));
+    printf("Bit-Value an pos 1 von x:%i\n", get_bit_value_at(1, x));
+    printf("Bit-Value an pos 0 von x:%i\n", get_bit_value_at(0, x));
 
     printf("Bit-Repraesentation von x (%d):\n", x);
     print_bit_sequence(x);
@@ -22,7 +31,8 @@ int main() {
     return 0;
 }
 
-int get_bit_value_at(int pos, int x) {
+int get_bit_value_at(int pos, int x)
+{
 
     // Größe von x in Bits
     int max_bit_pos = sizeof(x) * 8; // Sizeof gibt Bytes zurück
@@ -40,27 +50,21 @@ int get_bit_value_at(int pos, int x) {
 
 // --------------
 
-void print_bit_sequence(int x) {
+void print_bit_sequence(int x)
+{
+    int num_bits;
+    int i;
+    num_bits = sizeof(x) * 8;
 
-    // Anzahl der Bits in x
-    int num_bits = sizeof(x) * 8;
-    int i = num_bits - 1;
-    int bit = 0;
-
-    for (; i >= 0; i--) {
-
-        // Verschieben und das Bit extrahieren
-        bit = (x >> i) & 1; 
-
-        // Bit ausgeben
-        printf("%d", bit); 
+    for(i = num_bits - 1; i >= 0; i--) {
+        printf("%i",get_bit_value_at(i, x));
     }
-    printf("\n"); // Zeilenumbruch nach dem Ende der Bit-Sequenz
+    printf("\n");
 }
 
 // ---------------
 
-int implication (int x, int y) {
+int implication (int x, int y){
 
     return (~x) | y;
 
