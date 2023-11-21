@@ -2,20 +2,20 @@
 
 int main () {
     int x = 11;
-    int rows = (x-1)/2; // Number of rows needed
-    int r = 0;
+    int rows = (x+1)/2; // Number of rows needed: 6
+    int row = 0;
     int column = 0;
 
-    for (; r < rows; r++) {
+    for (; row < rows; row++) {
 
         for (; column < x; column++) {
-            if (column > r && column < x - r) {
-                printf("x");
+            if (column < row || column >= x - row) {
+                printf(" ");
 
             }
 
             else {
-                printf(" ");
+                printf("x");
             }
 
         }
