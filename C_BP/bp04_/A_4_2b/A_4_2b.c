@@ -3,8 +3,6 @@
 // Functions
 int fibonacci (int n);
 
-
-
 int main ()
 {
 
@@ -14,12 +12,12 @@ int main ()
 
 }
 
-
 int fibonacci (int n) {
 
     int f1 = 1;
     int f2 = 1;
 
+    /* Wir starten bei n = 3, erste Berechnung die durchgeführt werden muss */
     int i = 3;
 
     int fn = 1;

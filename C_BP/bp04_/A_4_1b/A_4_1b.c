@@ -2,7 +2,7 @@
 
 int main () {
     int x = 11;
-    int rows = (x+1)/2; // Number of rows needed: 6
+    int rows = (x + 1) / 2; // Number of rows needed: 6
     int row = 0;
     int column = 0;
 

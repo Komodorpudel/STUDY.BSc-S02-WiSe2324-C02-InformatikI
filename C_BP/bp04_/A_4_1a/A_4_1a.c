@@ -11,6 +11,8 @@ int main ()
     for (; i <= rows; i++) {
 
         for (; j <= cols; j++) {
+
+            /* Auszugebende Zahl */
             printf("%i\t", i + ((j - 1) * rows));
         }
 

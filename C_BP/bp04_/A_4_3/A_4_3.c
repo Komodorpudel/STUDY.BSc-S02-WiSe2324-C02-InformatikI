@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define MAX_SIZE 10
+#define MAX_SIZE 10 /* Kein spezifischer variablen typ. Einfach eine 10 vor dem Compilen */
 
 /* Funktion zur Initialisierung der Matrix */
 void matrix_init(int m[][MAX_SIZE], int n)  /* rows first, then columns  */
@@ -72,15 +72,18 @@ void matrix_mult(int m1[][MAX_SIZE], int m2[][MAX_SIZE], int n)
             /* Befüllen */
             temp[i][j] = 0;
             for (k = 0; k < n; k++) {
-                temp[i][j] = temp[i][j] + (m1[i][k] * m2[k][j]);
+                temp[i][j] = temp[i][j] + (m1[i][k] * m2[k][j]); /* rows first, then columns  */
             }
         }
     }
 
     /* Kopieren des Ergebnisses zurück in m1 */
     for (i = 0; i < n; i++) {
+
         for (j = 0; j < n; j++) {
+
             m1[i][j] = temp[i][j];
+            
         }
     }
 }

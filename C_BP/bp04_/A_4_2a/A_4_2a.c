@@ -3,11 +3,10 @@
 // Functions
 int sum_even (int n, int m);
 
-
 int main ()
 {
     int n = 2;
-    int m = 4;
+    int m = 6;
 
     printf("%i", sum_even(n,m));
 
