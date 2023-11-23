@@ -3,7 +3,7 @@
 int main ()
 {
     int rows = 5;
-    int cols = 5;
+    int cols = 10;
     int i = 1;
     int j = 1;
 
