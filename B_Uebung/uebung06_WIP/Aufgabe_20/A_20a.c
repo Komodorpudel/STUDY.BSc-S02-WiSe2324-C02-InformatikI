@@ -20,7 +20,7 @@ void string_ncat(char v[], char w[], int n) {
     v[i + j] = '\0';
 }
 
-int main() {
+int main(void) {
     char str1[50] = "Hallo ";
     char str2[] = "Welt!";
     char str3[] = "";
