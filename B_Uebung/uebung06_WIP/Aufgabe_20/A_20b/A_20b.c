@@ -28,7 +28,6 @@ int string_suffix(char v[], char w[])
 
     int i = 0;
 
-
     /* Kein Suffix wenn länger */
     if (w_len > v_len) {
         return 0;
