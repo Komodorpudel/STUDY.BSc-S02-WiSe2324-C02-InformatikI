@@ -6,6 +6,7 @@
 
 unsigned int my_interval_rand(unsigned int u, unsigned int o)
 {
+    /* "Unsigned" = Ohne Vorzeichen; größerer Wertebereich im positiven */
     unsigned int range;
     unsigned int min;
     unsigned int rand_num;
