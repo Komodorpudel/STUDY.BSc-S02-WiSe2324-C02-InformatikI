@@ -1,0 +1,5 @@
+gcc -ansi -pedantic -Wall -Wextra A_22.c -o A_22
+
+
+./A_22 Daniel
+./A_22 lagerregal
