@@ -56,11 +56,10 @@ int bot_move()
 
 /* ----------------------------------- */
 
-
 int main(int argc, char *argv[])
 {
     int kontostand_user;
-    int kontostand_bot
+    int kontostand_bot;
     int bet;
     int user_sum;
     int bot_sum;
