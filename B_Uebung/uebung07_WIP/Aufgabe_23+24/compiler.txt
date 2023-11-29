@@ -1,0 +1,5 @@
+gcc -ansi -pedantic -Wall -Wextra A23+A24.c -o A23+A24
+
+
+./A23+A24 500
+./A23+A24 200

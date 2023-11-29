@@ -4,6 +4,9 @@
 #define MAX_ROLLS 10
 #define MAX_DICE_VALUE 6
 
+int user_move(void);
+int bot_move(void);
+
 /* ----------------------------------- */
 
 int read_bet(int kontostand_user, int kontostand_bot)
@@ -23,7 +26,7 @@ int read_bet(int kontostand_user, int kontostand_bot)
 
 /* ----------------------------------- */
 
-int user_move()
+int user_move(void)
 {
 
     int sum = 0;
@@ -37,13 +40,14 @@ int user_move()
         getchar();
 
         sum = sum + (rand() % MAX_DICE_VALUE) + 1;
+        printf("%d\n", sum);
     }
     return sum;
 }
 
 /* ----------------------------------- */
 
-int bot_move()
+int bot_move(void)
 {
     int sum = 0;
     int i;
@@ -64,6 +68,7 @@ int main(int argc, char *argv[])
     int user_sum;
     int bot_sum;
 
+    /* Kontostand holen für beide */
     if (argc != 2 || (kontostand_user = atoi(argv[1])) <= 0) {
         printf("Fehler: Ungültiger Kommandozeilenparameter.\n");
         return 1;
