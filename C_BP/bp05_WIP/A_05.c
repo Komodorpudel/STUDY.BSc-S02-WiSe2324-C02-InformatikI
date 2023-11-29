@@ -14,12 +14,12 @@ unsigned int my_interval_rand(unsigned int u, unsigned int o)
     /* Testen was größer ist */
     if (u > o) {
         min = o;
-        range = u - (o + 1); /* + 1 wegen einschließlich */
+        range = u - (o - 1); /* + 1 wegen einschließlich */
     }
     
     else {
         min = u;
-        range = o - (u + 1);
+        range = o - (u - 1);
     }
     
     rand_num = rand() % range;
