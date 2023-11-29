@@ -54,13 +54,15 @@ int main(int argc, char *argv[]) {
 
     int i;
 
+    /* Wenn kein Param übergeben, dann 0 */
+
     if (argc < 2) {
         printf("Fehler: Keine Parameter übergeben.\n");
         return 1;
     }
 
     for (i = 1; i < argc; ++i) {
-        
+
         char *param = argv[i];
 
         if (is_palindrome(param)) {
