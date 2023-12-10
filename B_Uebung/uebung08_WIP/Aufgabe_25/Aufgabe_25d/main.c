@@ -7,24 +7,30 @@
 #define BUFFER_ERROR -2
 #define MIN_LINES 5
 
-int read_number_in_line()
+int read_number_in_line(void)
 {
+    int number;
     char buffer[MAX_STRING_LENGTH];
+
     if (fgets(buffer, MAX_STRING_LENGTH, stdin) == NULL) {
         return BUFFER_ERROR;
     }
 
     buffer[strcspn(buffer, "\n")] = 0;
-    int number = atoi(buffer);
+    number = atoi(buffer);
+
     return number > 0 ? number : NON_POSITIVE_NUMBER;
 }
 
-int main()
+int main(void)
 {
-    int previous_number = 0, number, is_first_number = 1;
+    int previous_number = 0;
+    int number;
+    int is_first_number = 1;
+    int i;
 
-    for (int i = 0; i < MIN_LINES; i++) {
-        printf("Bitte geben Sie eine Zahl ein: ");
+    for (i = 0; i < MIN_LINES; i++) {
+        printf("Bitte geben Sie eine Zahl ein: \n");
         number = read_number_in_line();
 
         if (number == NON_POSITIVE_NUMBER || number == BUFFER_ERROR) {

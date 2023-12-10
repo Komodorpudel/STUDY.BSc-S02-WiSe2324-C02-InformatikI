@@ -1,0 +1,4 @@
+gcc -ansi -pedantic -Wall -Wextra main.c -o main
+
+
+./main < 1.txt

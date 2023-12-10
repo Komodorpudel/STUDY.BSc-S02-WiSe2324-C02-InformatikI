@@ -1,17 +1,15 @@
+#include "isbn_utils.h"
 #include <stdio.h>
-#include "points.h"
-#include "distance.h"
-#include "lines.h"
-#include "line_from_points.h"
-#include "point_on_line.h"
+#include <time.h>
+#include <stdlib.h>
 
-int main() {
-    double p1[] = {1, 2};
-    double p2[] = {3, 4};
-    double line[2];
+int main(void) {
 
-    // Testen Sie hier die verschiedenen Funktionen
-    // Zum Beispiel: Ausgabe eines Punktes, Berechnen des Abstandes, Überprüfen ob Punkt auf Gerade liegt, etc.
+    char isbn[30];
 
+    /* Seed the random number generator */
+    srand(time(NULL));
+    generate_random_ISBN(isbn);
+    printf("%s\n", isbn);
     return 0;
 }

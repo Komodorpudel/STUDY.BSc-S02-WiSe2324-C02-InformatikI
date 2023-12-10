@@ -22,14 +22,21 @@ int read_number_in_line()
 
 int main()
 {
+    int number;
+
     printf("Bitte geben Sie eine Zahl ein: ");
-    int number = read_number_in_line();
+    number = read_number_in_line();
 
     if (number == NON_POSITIVE_NUMBER) {
         printf("Eingegebene Zahl ist nicht positiv.\n");
-    } else if (number == BUFFER_ERROR) {
+
+    }
+    
+    else if (number == BUFFER_ERROR) {
         printf("Ein Pufferfehler ist aufgetreten.\n");
-    } else {
+    }
+    
+    else {
         printf("Die eingegebene Zahl ist: %d\n", number);
     }
 
