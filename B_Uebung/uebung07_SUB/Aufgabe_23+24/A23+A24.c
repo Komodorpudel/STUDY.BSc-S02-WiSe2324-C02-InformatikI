@@ -42,7 +42,9 @@ int user_move(void)
         sum = sum + (rand() % MAX_DICE_VALUE) + 1;
         printf("%d\n", sum);
     }
+
     return sum;
+
 }
 
 /* ----------------------------------- */
@@ -55,7 +57,9 @@ int bot_move(void)
 
         sum = sum + (rand() % MAX_DICE_VALUE) + 1;
     }
+
     return sum;
+    
 }
 
 /* ----------------------------------- */
