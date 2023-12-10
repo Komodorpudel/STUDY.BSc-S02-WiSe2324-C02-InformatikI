@@ -1,4 +1,5 @@
 #include "line_from_points.h"
+#include "points.h"
 
 int line_from_points(double g[], double p1[], double p2[]) {
     if (is_equal(p1[X], p2[X])) return 0;
