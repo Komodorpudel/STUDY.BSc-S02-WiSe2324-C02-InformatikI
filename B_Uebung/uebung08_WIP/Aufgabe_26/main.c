@@ -9,6 +9,7 @@ int main(void) {
 
     /* Seed the random number generator */
     srand(time(NULL));
+    
     generate_random_ISBN(isbn);
     printf("%s\n", isbn);
     return 0;

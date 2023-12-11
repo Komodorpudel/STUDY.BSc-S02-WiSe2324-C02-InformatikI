@@ -1,5 +1,5 @@
-gcc -ansi -pedantic -Wall -Wextra -o program main.c isbn_utils.c random_utils.c
+gcc -ansi -pedantic -Wall -Wextra -o program main.c distance.c double_compare.c line_from_points.c point_on_line.c
 
 
 
-./main
+./program

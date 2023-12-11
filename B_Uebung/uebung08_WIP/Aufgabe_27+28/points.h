@@ -1,4 +1,6 @@
 #ifndef POINTS_H
+
+/* Anfang */
 #define POINTS_H
 
 #define X 0
@@ -6,3 +8,4 @@
 #define PRINT_POINT(p) printf("(%lf, %lf)\n", p[X], p[Y]);
 
 #endif
+/* Ende */
