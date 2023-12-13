@@ -4,7 +4,6 @@
 #include <errno.h>
 #include <math.h>
 
-
 double my_pow(double x, int y) {
 
     /* x ist Basis, y ist Exponent */

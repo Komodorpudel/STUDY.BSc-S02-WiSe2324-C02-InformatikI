@@ -9,7 +9,6 @@
 /* Funktionsprototypen */
 double my_pow(double x, int y);
 
-
 int main (void) {
 
     double x = -2;
@@ -23,7 +22,6 @@ int main (void) {
 
     printf("Final Result: %lf\n", result);
     printf("errno: %i\n", errno);
-
 
     return 0;
 }
