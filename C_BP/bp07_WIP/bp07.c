@@ -45,9 +45,11 @@ void my_pow_tests(void)
 {
 	printf("MY_POW TESTS (SUCCESS == 1 / FAILURE == 0)\n");
 	printf("=================================================\n");
+
 	printf("my_pow(2, 5): \t\t\t%i\t", my_pow(2, 5) == pow(2, 5));
 	my_pow(2, 5);
 	printf("errno: %i\n", errno);
+	
 	printf("my_pow(-2, -4): \t\t%i\t", my_pow(-2, -4) == pow(-2, -4));
 	my_pow(-2, -4);
 	printf("errno: %i\n", errno);

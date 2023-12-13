@@ -1,9 +1,32 @@
 #include <stdio.h>
-#include "my_math.h"
 #include <float.h>
 #include <errno.h>
 #include <math.h>
 
+/* Makro */
+#define MY_FABS(x) ((x) > 0 ? (x) : -(x))              
+
+/* Funktionsprototypen */
+double my_pow(double x, int y);
+
+
+int main (void) {
+
+    double x = -2;
+    int y = -3;
+    double result = 1.0;
+
+    printf("DBL_MIN: %lf\n", DBL_MIN);
+    printf("DBL_MAX: %lf\n", DBL_MAX);
+
+    result = my_pow(x, y);
+
+    printf("Final Result: %lf\n", result);
+    printf("errno: %i\n", errno);
+
+
+    return 0;
+}
 
 double my_pow(double x, int y) {
 
@@ -11,7 +34,7 @@ double my_pow(double x, int y) {
     int i = 1;
     double result = 1.0;
     int absY = MY_FABS(y);
-    /* printf("%i\n", absY); */
+    printf("%i\n", absY);
 
     /* Domain Error */
     if (x == 0 && y <= 0) { /* Wir würden 0 durch irgendwas teilen */

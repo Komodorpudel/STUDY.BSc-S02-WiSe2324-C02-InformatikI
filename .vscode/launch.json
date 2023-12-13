@@ -5,7 +5,7 @@
             "name": "Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/Users/simonhinterreiter/Library/CloudStorage/Dropbox/06 - Coding/01 - Local GitHub Repositories/STUDY.BSc-S02-WiSe2324-C02-InformatikI/C_BP/bp07_WIP/bp07.c",
+            "program": "/Users/simonhinterreiter/Library/CloudStorage/Dropbox/06 - Coding/01 - Local GitHub Repositories/STUDY.BSc-S02-WiSe2324-C02-InformatikI/C_BP/bp07_WIP/program",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
