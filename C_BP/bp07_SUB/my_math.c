@@ -93,14 +93,14 @@ double my_pow(double x, int y) {
         /* Wenn y gerade ist, dann gleiches Ergebnis wie mit abs(X) */
         if (y % 2 == 0) {
 
-        return my_pow(MY_FABS(x), y);
+            return my_pow(MY_FABS(x), y);
 
         }
 
         /* Wenn y ungerade, dann wird negative Zahl rauskommen */
         else {
         
-        return -my_pow(MY_FABS(x),y);
+            return -my_pow(MY_FABS(x),y);
             
         }
     }
