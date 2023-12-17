@@ -42,7 +42,7 @@ int main (void) {
     while (pos_roboter[X] == pos_apfel[X] && pos_roboter[Y] == pos_apfel[Y]);
 
     /* Anweisung */
-    printf("Du bist Roboter r, laufe zum Apfel a");
+    printf("Du bist Roboter r, laufe zum Apfel a\n");
 
 
     /* Schritte einlesen solange bis am Ziel*/
