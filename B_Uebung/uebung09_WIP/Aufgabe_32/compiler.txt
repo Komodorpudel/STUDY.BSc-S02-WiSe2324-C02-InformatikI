@@ -1,0 +1,5 @@
+gcc -ansi -pedantic -Wall -Wextra -o program vector_main.c read_util.c vector.c
+
+
+
+./program

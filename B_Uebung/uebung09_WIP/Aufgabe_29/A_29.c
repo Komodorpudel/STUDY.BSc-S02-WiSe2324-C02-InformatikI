@@ -41,6 +41,7 @@ int main (void) {
     }
     while (pos_roboter[X] == pos_apfel[X] && pos_roboter[Y] == pos_apfel[Y]);
 
+    /* Anweisung */
     printf("Du bist Roboter r, laufe zum Apfel a");
 
 
@@ -60,6 +61,7 @@ int main (void) {
     return 0;
 
 }
+
 
 /* -------------------------------------------- */
 int read_string(char in[], int max_len)
@@ -87,6 +89,7 @@ int read_string(char in[], int max_len)
     return VALID_INPUT;
 }
 
+
 /* -------------------------------------------- */
 int flush_buff(void)
 {
@@ -95,14 +98,16 @@ int flush_buff(void)
     return c != EOF;
 }
 
+
 /* -------------------------------------------- */
 int spielzug_machen (void) {
 
     char input [7];
+    int status;
 
     /* Zeichenkette vom Nutzer einlesen */
     printf("Nächster Schritt( \"HOCH\", \"RUNTER\", \"LINKS\", \"RECHTS\"):\n");
-    int status = read_string(input, 7);
+    status = read_string(input, 7);
 
     if (status != 0) {
         
@@ -161,8 +166,8 @@ int spielzug_machen (void) {
 
 }
 
-/* -------------------------------------------- */
 
+/* -------------------------------------------- */
 void darstellung (void) {
     int i = 1;
     int j = 1;

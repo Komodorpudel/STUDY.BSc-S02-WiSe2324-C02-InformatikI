@@ -1,6 +1,8 @@
 {
     "cmake.configureOnOpen": true,
     "files.associations": {
-        "stdio.h": "c"
-    }
+        "stdio.h": "c",
+        "istream": "c"
+    },
+    "C_Cpp.dimInactiveRegions": false
 }
