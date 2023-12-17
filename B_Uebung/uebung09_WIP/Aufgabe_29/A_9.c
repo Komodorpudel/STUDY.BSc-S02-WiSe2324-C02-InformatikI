@@ -41,6 +41,8 @@ int main (void) {
     }
     while (pos_roboter[X] == pos_apfel[X] && pos_roboter[Y] == pos_apfel[Y]);
 
+    printf("Du bist Roboter r, laufe zum Apfel a");
+
 
     /* Schritte einlesen solange bis am Ziel*/
     while (pos_roboter[X] != pos_apfel[X] || pos_roboter[Y] != pos_apfel[Y]) {
