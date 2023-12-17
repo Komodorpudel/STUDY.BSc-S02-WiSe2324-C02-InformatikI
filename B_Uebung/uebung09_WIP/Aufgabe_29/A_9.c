@@ -3,8 +3,11 @@
 #include <string.h>
 #include <time.h>
 
+/* Makros */
 #define VALID_INPUT 0
-#define INVALID_INPUT 1
+#define INPUT_TOO_LONG 1
+#define INPUT_ERROR 2
+
 #define grid_size 5
 #define X 0 /* ----- */
 #define Y 1 /* | */
@@ -12,21 +15,21 @@
 /* Protypen */
 int flush_buff(void);
 int read_string(char in[], int max_len);
-void spielzug_machen (void);
+int spielzug_machen (void);
 void darstellung (void);
 
 /* Globale Variablen */
 int pos_apfel [2]; /* Position Apfel */
 int pos_roboter [2]; /* Position Roboter */
-char input [6];
+
 
 /* -------------------------------------------- */
-
 int main (void) {
 
     int count = 0;
+    int status;
 
-    /* Positionen initialissieren */
+    /* Positionen initialisieren */
     /* Roboter */
     pos_roboter[X] = 5;
     pos_roboter[Y] = 1;
@@ -42,9 +45,12 @@ int main (void) {
     /* Schritte einlesen solange bis am Ziel*/
     while (pos_roboter[X] != pos_apfel[X] || pos_roboter[Y] != pos_apfel[Y]) {
         darstellung();
-        printf("Nächster Schritt:\n");
-        read_string(input, 6);
-        spielzug_machen();
+        status = spielzug_machen();
+
+        if (status == INPUT_ERROR) {
+            printf("EOF erreicht.\n");
+            break;
+        }
         count++;
     }
     printf("Schritte gemacht:%i", count);
@@ -54,27 +60,32 @@ int main (void) {
 }
 
 /* -------------------------------------------- */
-
 int read_string(char in[], int max_len)
 {
     int i = 0;
-    char c = getchar();
-    while (c != '\n' && i < max_len - 1) {
+    char c;
+
+    /* in[] mit Daten aus Buffer befüllen */
+    while ((c = getchar()) != '\n' && c != EOF && i < max_len - 1) {
+    /* Ich schreib bis Ende oder max_len */
         in[i++] = c;
-        c = getchar();
     }
 
-    if (i == max_len - 1 && c != '\n') {
+    /* Wenn ich bei max_len von in[] angekommen bin, aber buffer noch nicht leer ist, flushen */
+    if (i == max_len - 1 && c != '\n' && c != EOF) { 
         flush_buff();
-        return INVALID_INPUT;
+        return INPUT_TOO_LONG;
     }
-    in[i] = '\0';
+    else if (c == EOF){
+        return INPUT_ERROR;
+    }
+
+    /* Wenn letzter Wert ausgelesen */
+    in[i] = '\0'; 
     return VALID_INPUT;
 }
 
 /* -------------------------------------------- */
-
-
 int flush_buff(void)
 {
     int c;
@@ -83,11 +94,22 @@ int flush_buff(void)
 }
 
 /* -------------------------------------------- */
+int spielzug_machen (void) {
 
-void spielzug_machen (void) {
+    char input [7];
 
+    /* Zeichenkette vom Nutzer einlesen */
+    printf("Nächster Schritt( \"HOCH\", \"RUNTER\", \"LINKS\", \"RECHTS\"):\n");
+    int status = read_string(input, 7);
+
+    if (status != 0) {
+        
+        return status;
+    }
+    
+    /* Eingabe ausführen */
     /* HOCH */
-    if (strncmp (input, "HO", 2) == 0) {
+    if (strncmp (input, "HOCH", 2) == 0) {
         if (pos_roboter[Y] == 1) {
             pos_roboter[Y] = grid_size;
         }
@@ -99,7 +121,7 @@ void spielzug_machen (void) {
     }
 
     /* RUNTER */
-    else if (strncmp (input, "RU", 2) == 0) {
+    else if (strncmp (input, "RUNTER", 2) == 0) {
         if (pos_roboter[Y] == grid_size) {
             pos_roboter[Y] = 1;
         }
@@ -111,7 +133,7 @@ void spielzug_machen (void) {
     }
 
     /* Rechts */
-    else if (strncmp (input, "RE", 2) == 0) {
+    else if (strncmp (input, "RECHTS", 2) == 0) {
         if (pos_roboter[X] == grid_size) {
             pos_roboter[X] = 1;
         }
@@ -123,7 +145,7 @@ void spielzug_machen (void) {
     }
 
     /* LINKS */
-    else if (strncmp (input, "LI", 2) == 0) {
+    else if (strncmp (input, "LINKS", 2) == 0) {
         if (pos_roboter[X] == 1) {
             pos_roboter[X] = grid_size;
         }
@@ -132,6 +154,8 @@ void spielzug_machen (void) {
             pos_roboter[X] = pos_roboter[X] - 1;
         }
     }
+
+    return VALID_INPUT;
 
 }
 
