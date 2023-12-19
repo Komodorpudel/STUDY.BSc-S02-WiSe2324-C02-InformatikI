@@ -24,7 +24,6 @@ int main(void)
 /* Erhät den value von x und returned den quadrierten Wert */
 int calc_square (int x)
 {
-
     return x * x;
 }
 
@@ -32,6 +31,5 @@ int calc_square (int x)
 /* Erhält eine Reference zu x und überschreibt den Wert an der Stelle mit dem quadrierten Wert */
 void squared (int *x)
 {
-
     *x = *x * *x;
 }
