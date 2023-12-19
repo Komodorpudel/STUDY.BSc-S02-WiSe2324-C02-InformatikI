@@ -49,9 +49,20 @@ void append_pointer(char *destination, char *source)
     
     Dann zähle ich die Adressen auf die Destination und Source jeweils zeigen um eins hoch. Die schleife endet */
 
-    /* while prüft ob der wert auf den Destination ungleich 0 ist und macht dann weiter */
+    /* while prüft ob der wert auf den Destination zeigt ungleich 0 ist und macht dann weiter */
     while ((*destination++ = *source++));
 
+    /* Beachte Reihenfolge wie Kompiler das verarbeitet, nachfolgendes könnte anders gewertet werden: */
+    /*     while ((*(destination++) = *(source++))); */
+
+    /*
+    (*destination++ = *source++):
+    Zuweisung: Der Wert, auf den source zeigt (*source), wird dem Speicherort zugewiesen, auf den destination zeigt (*destination).
+    Post-Inkrement: Dann werden destination und source inkrementiert. Dies geschieht nach der Zuweisung, aber der Post-Inkrement-Operator liefert den Wert des Pointers vor der Inkrementierung.
+
+    (*(destination++) = *(source++)):
+    Post-Inkrement: Die Klammern um (destination++) und (source++) scheinen zuerst zu kommen, aber aufgrund der Funktionsweise des Post-Inkrement-Operators wird der aktuelle Wert von destination und source für die Operation verwendet.
+    Zuweisung: Wie im ersten Fall wird der Wert, auf den source zeigt, an die Stelle kopiert, auf die destination zeigt. Die Pointer werden danach inkrementiert. */
 }
 
 /* Alternative Schreibweise */
