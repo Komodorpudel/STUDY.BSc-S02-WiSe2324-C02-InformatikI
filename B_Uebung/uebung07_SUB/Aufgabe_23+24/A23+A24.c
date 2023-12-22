@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*  */
 #define MAX_ROLLS 10
 #define MAX_DICE_VALUE 6
 
