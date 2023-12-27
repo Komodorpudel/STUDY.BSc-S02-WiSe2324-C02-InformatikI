@@ -1,5 +1,9 @@
 #include <stdio.h>
+
+#define _USE_MATH_DEFINES /* Needed so that it works with gcc on Windows */
 #include <math.h>
+
+#define _USE_MATH_DEFINES
 
 float vector_length(float x, float y)
 {

@@ -3,6 +3,7 @@
 /* Anfang */
 #define VECTOR_H
 
+
 /* Konstanten */
 #define VALID_INPUT 0
 #define INPUT_ERROR 1
