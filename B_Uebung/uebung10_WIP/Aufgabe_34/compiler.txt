@@ -1,0 +1,5 @@
+gcc -ansi -pedantic -Wall -Wextra -o program A_29.c
+
+
+
+./program
