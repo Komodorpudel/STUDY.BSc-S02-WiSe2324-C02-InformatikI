@@ -5,6 +5,8 @@
 char *string_d_copy_n(char *s, int n);
 char **string_d_split(const char *s, char delim, int *count);
 
+/* --------------------------------------------------- */
+
 int main(void) {
     const char *input = "Mehl;Milch;;Eier";
     char delim = ';';
@@ -38,6 +40,8 @@ int main(void) {
     return 0;
 }
 
+/* --------------------------------------------------- */
+
 char *string_d_copy_n(char *s, int n)
 {
     /* Speicherplatz veservieren */
@@ -57,6 +61,8 @@ char *string_d_copy_n(char *s, int n)
     return copy;
 
 }
+
+/* --------------------------------------------------- */
 
 /* Die Funktion gibt ein Array zurück mit Zeiger auf die Arrays, insofern Doppelzeiger (Wir zeigen auf das Array und das Array zeigt auf die Strings) */
 char** string_d_split(const char *s, char delim, int *count)
@@ -122,3 +128,5 @@ char** string_d_split(const char *s, char delim, int *count)
     return result;
 
 }
+
+/* --------------------------------------------------- */
