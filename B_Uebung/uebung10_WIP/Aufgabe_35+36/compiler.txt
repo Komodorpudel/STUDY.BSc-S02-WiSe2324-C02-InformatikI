@@ -1,4 +1,4 @@
-gcc -ansi -pedantic -Wall -Wextra -o program A_29.c
+gcc -ansi -pedantic -Wall -Wextra -o program A_35+36.c main.c print-utils.c
 
 
 

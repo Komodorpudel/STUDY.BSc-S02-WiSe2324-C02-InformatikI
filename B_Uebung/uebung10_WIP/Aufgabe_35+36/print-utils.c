@@ -1,12 +1,16 @@
 #include "print-utils.h"
 
-void clear_field()
+/* -------------------------------------- */
+
+void clear_field(void)
 {
     int i;
     for (i = 0; i < CLEAR_HEIGHT; i++) {
         printf("\n");
     }
 }
+
+/* -------------------------------------- */
 
 void wait_ticks(int ticks)
 {
@@ -16,17 +20,25 @@ void wait_ticks(int ticks)
     }
 }
 
+/* -------------------------------------- */
+
 void wait(int time)
 {
     SLEEP(time);
 }
 
-void print_living_cell()
+/* -------------------------------------- */
+
+void print_living_cell(void)
 {
     printf("%s", TILE_LIVE);
 }
 
-void print_dead_cell()
+/* -------------------------------------- */
+
+void print_dead_cell(void)
 {
     printf("%s", TILE_DEAD);
 }
+
+/* -------------------------------------- */
