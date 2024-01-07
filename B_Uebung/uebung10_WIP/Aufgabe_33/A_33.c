@@ -13,25 +13,25 @@ int main(void) {
     int count, i;
     char **split_strings;
 
-    // Aufrufen von string_d_split
+    /* Aufrufen von string_d_split */
     split_strings = string_d_split(input, delim, &count);
 
-    // Überprüfen, ob die Funktion erfolgreich war
+    /* Überprüfen, ob die Funktion erfolgreich war */
     if (split_strings == NULL) {
         printf("Fehler beim Aufteilen der Zeichenkette.\n");
         return 1;
     }
 
-    // Ausgeben der ursprünglichen Zeichenkette
+    /* Ausgeben der ursprünglichen Zeichenkette */
     printf("Ursprüngliche Zeichenkette: %s\n", input);
 
-    // Ausgeben der aufgeteilten Teilzeichenketten
+    /* Ausgeben der aufgeteilten Teilzeichenketten */
     printf("Aufgeteilte Teilzeichenketten:\n");
     for (i = 0; i < count; i++) {
         printf("%d: %s\n", i, split_strings[i]);
     }
 
-    // Freigeben des dynamisch reservierten Speichers
+    /*  Freigeben des dynamisch reservierten Speichers */
     for (i = 0; i < count; i++) {
         free(split_strings[i]);
     }
@@ -53,10 +53,11 @@ char *string_d_copy_n(char *s, int n)
     if ( n <= 0) {
         copy[0] = '\0';
     }
-
-    /* Wir verwenden strncpy um n Buchstaben von s nach copy zu kopieren */
-    strncpy(copy, s, n);
-    copy[n] = '\0'; /* Wir fügen an letzter Stelle den Terminierer hinzu */
+    else {
+        /* Wir verwenden strncpy um n Buchstaben von s nach copy zu kopieren */
+        strncpy(copy, s, n);
+        copy[n] = '\0'; /* Wir fügen an letzter Stelle den Terminierer hinzu */
+    }
 
     return copy;
 
@@ -71,6 +72,7 @@ char** string_d_split(const char *s, char delim, int *count)
     int start = 0; /* Startwert für den nächsten String */
     int max_strings = 1;
     int result_index = 0;
+    char **result;
 
     /* Wenn s leer oder count == NUll (die adresse an der wir die Anzahl speichern sollen) dann return */
     if (!s || !count) {
@@ -85,7 +87,7 @@ char** string_d_split(const char *s, char delim, int *count)
     }
 
     /* Wir legen dynamisches Array mit passender Länge an */
-    char **result = (char**) malloc(max_strings * sizeof(char *)); /* Wieso "char**"? Ein Array selbst ist ein pointer, und im array sind pointer */
+    result = (char**) malloc(max_strings * sizeof(char *)); /* Wieso "char**"? Ein Array selbst ist ein pointer, und im array sind pointer */
 
     if (!result) {
         return NULL;
