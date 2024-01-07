@@ -211,4 +211,3 @@ int game_of_life(int **field, int width, int height) {
 
     return 0; /* Erfolgreicher Abschluss */
 }
-
