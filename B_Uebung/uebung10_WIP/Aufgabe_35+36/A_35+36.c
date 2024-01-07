@@ -41,8 +41,8 @@ int **field_init(int width, int height) {
  * Die Wahrscheinlichkeit für ALIVE beträgt (100 * live_probability)%.
  */
 int random_state(double live_probability) {
-    /* Initialisierung des Zufallsgenerators */
-    srand((unsigned)time(NULL));
+
+    /* srand ist in main. Wenn wir srand hier habem, ist das Problem, dass unser random Seed, hier die zeit in sekunden, jedes mal gleich ist, weil der Prozessor alles so schnell abläuft. Der Seed ist gleich und jedes mal kommt die gleiche anfängliche Zahl raus und unser Feld ist entweder immer voll oder immer leer */
 
     /* Wenn live_probability ≥ 1, immer ALIVE zurückgeben */
     if (live_probability >= 1.0) {
@@ -54,7 +54,7 @@ int random_state(double live_probability) {
     }
     /* Ansonsten, basierend auf der Wahrscheinlichkeit ALIVE oder DEAD zurückgeben */
     else {
-        return (rand() < live_probability * RAND_MAX) ? ALIVE : DEAD;
+        return (rand() % 100 < (live_probability * 100)) ? ALIVE : DEAD;
         /* RAND_MAX ist größte random number. Multipliziert mit
          *live_probability teile ich die menge an Zahlen auf in
          * ALIVE oder DEAD
@@ -186,6 +186,7 @@ int **next_state(int **field, int width, int height) {
 int game_of_life(int **field, int width, int height) {
     int generation;
     int **next_field;
+    int y;
 
     /* Generationen durchlaufen */    
     for (generation = 0; generation < NUM_GENERATIONS; generation++) {
@@ -193,13 +194,13 @@ int game_of_life(int **field, int width, int height) {
         /* Feld der aktuellen Generation ausgeben */
         clear_field();
         print_field(field, width, height);
-        wait(1); /* Eine Sekunde warten */
+        wait_ticks(500000000); /* Eine Sekunde warten */
 
         /* Zustand für die nächste Generation berechnen */
         next_field = next_state(field, width, height);
 
         /* Speicher des aktuellen Feldes freigeben */
-        for (int y = 0; y < height; y++) {
+        for (y = 0; y < height; y++) {
             free(field[y]);
         }
         free(field);

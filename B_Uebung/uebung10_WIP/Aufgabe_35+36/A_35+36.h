@@ -1,7 +1,7 @@
-#ifndef A_35_36_INCLUDED
-#define A_35_36_INCLUDED
+#ifndef A_35_36_H_INCLUDED
 
-
+/* Anfang */
+#define A_35_36_H_INCLUDED
 
 #include <stdlib.h> /* Für dynamische Speicherallokation */
 #include <time.h>
@@ -19,4 +19,5 @@ int alive_neighbors(int **field, int width, int height, int x, int y);
 int **next_state(int **field, int width, int height);
 int game_of_life(int **field, int width, int height);
 
+/* Ende */
 #endif

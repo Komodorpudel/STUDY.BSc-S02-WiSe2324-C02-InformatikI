@@ -22,7 +22,7 @@ void wait_ticks(int ticks)
 
 /* -------------------------------------- */
 
-void wait(int time)
+void wait_seconds(int time)
 {
     SLEEP(time);
 }

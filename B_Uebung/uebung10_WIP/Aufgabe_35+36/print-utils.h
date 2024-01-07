@@ -1,4 +1,6 @@
 #ifndef PRINT_H_INCLUDED
+
+/* Anfang */
 #define PRINT_H_INCLUDED
 
 #include <stdio.h>
@@ -18,8 +20,9 @@
 
 void clear_field(void);
 void wait_ticks(int ticks);
-void wait(int time);
+void wait_seconds(int time);
 void print_living_cell(void);
 void print_dead_cell(void);
 
+/* Ende */
 #endif

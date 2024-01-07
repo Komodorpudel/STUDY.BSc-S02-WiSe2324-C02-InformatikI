@@ -2,4 +2,4 @@ gcc -ansi -pedantic -Wall -Wextra -o program A_35+36.c main.c print-utils.c
 
 
 
-./program
+./program 5 5 

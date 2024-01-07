@@ -1,13 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "A_35+36.c"
-#include "print-utils.c"
+#include "A_35+36.h" /* Niemals .c includen, sondern beim Compilen separat berücksichtigen */
+#include "print-utils.h"
 
 int main(int argc, char *argv[]) {
     int width, height;
     int **field;
     int y;
     int x;
+
+    /* Initialisierung des Zufallsgenerators */
+    srand((unsigned)time(NULL));
 
     /* Überprüfung der Anzahl der Kommandozeilenparameter */
     if (argc != 3) {
