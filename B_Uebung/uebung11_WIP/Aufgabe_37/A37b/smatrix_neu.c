@@ -6,19 +6,22 @@
 
 /* Wichtig: Hier ist nach einem Einfachzeiger gefragt.  */
 
-double *allocate_matrix(int rows, int cols) {
+double *allocate_matrix(int rows, int cols)
+{
     return (double *)malloc(rows * cols * sizeof(double));
 }
 
 /* ----------------------------------- */
 
-double *access_matrix(double *matrix, int rows, int i, int j) {
+double *access_matrix(double *matrix, int rows, int i, int j)
+{
     return &matrix[i * rows + j];
 }
 
 /* ----------------------------------- */
 
-double *create_identity_matrix(int size) {
+double *create_identity_matrix(int size)
+{
     double *matrix = allocate_matrix(size, size);
     if (matrix != NULL) {
         int i, j;
@@ -33,7 +36,8 @@ double *create_identity_matrix(int size) {
 
 /* ----------------------------------- */
 
-void swap_rows(double *matrix, int cols, int row1, int row2) {
+void swap_rows(double *matrix, int cols, int row1, int row2)
+{
     int j;
     for (j = 0; j < cols; j++) {
         double temp = matrix[row1 * cols + j];
@@ -44,7 +48,8 @@ void swap_rows(double *matrix, int cols, int row1, int row2) {
 
 /* ----------------------------------- */
 
-void print_matrix(double *matrix, int rows, int cols) {
+void print_matrix(double *matrix, int rows, int cols)
+{
     int i, j;
     for (i = 0; i < rows; i++) {
         for (j = 0; j < cols; j++) {
@@ -56,7 +61,8 @@ void print_matrix(double *matrix, int rows, int cols) {
 
 /* ----------------------------------- */
 
-void free_matrix(double *matrix) {
+void free_matrix(double *matrix)
+{
     free(matrix);
 }
 

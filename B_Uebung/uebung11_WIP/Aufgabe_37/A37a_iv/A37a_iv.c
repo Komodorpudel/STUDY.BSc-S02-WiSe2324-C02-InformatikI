@@ -10,6 +10,8 @@ int main() {
     m_cast[0] = malloc(3 * sizeof(int));  // Reserviert Speicher für ein Array von 3 ints
     m_cast[1] = malloc(3 * sizeof(int));  // Reserviert Speicher für ein weiteres Array von 3 ints
 
+    /* Dran denken: malloc returned addresse. Also schreiben wir da oben an *(m_cast + 1) = m_cast[1] die Adresse die uns malloc gibt*/
+
     // Initialisiere das Array
     for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 3; j++) {
