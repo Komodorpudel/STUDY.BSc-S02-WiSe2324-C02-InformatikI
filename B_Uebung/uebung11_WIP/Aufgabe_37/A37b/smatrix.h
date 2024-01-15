@@ -1,5 +1,7 @@
-/* smatrix.h */
+
 #ifndef SMATRIX_H
+
+/* Anfang */
 #define SMATRIX_H
 
 /* Funktion zur Speicherreservierung */
@@ -20,4 +22,5 @@ void print_matrix(double *matrix, int rows, int cols);
 /* Funktion zur Speicherfreigabe */
 void free_matrix(double *matrix);
 
-#endif /* SMATRIX_H */
+/* Ende */
+#endif

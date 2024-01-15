@@ -3,13 +3,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/* ----------------------------------- */
+
 double *allocate_matrix(int rows, int cols) {
     return (double *)malloc(rows * cols * sizeof(double));
 }
 
+/* ----------------------------------- */
+
 double *access_matrix(double *matrix, int rows, int i, int j) {
     return &matrix[i * rows + j];
 }
+
+/* ----------------------------------- */
 
 double *create_identity_matrix(int size) {
     double *matrix = allocate_matrix(size, size);
@@ -24,6 +30,8 @@ double *create_identity_matrix(int size) {
     return matrix;
 }
 
+/* ----------------------------------- */
+
 void swap_rows(double *matrix, int rows, int cols, int row1, int row2) {
     int j;
     for (j = 0; j < cols; j++) {
@@ -32,6 +40,8 @@ void swap_rows(double *matrix, int rows, int cols, int row1, int row2) {
         matrix[row2 * cols + j] = temp;
     }
 }
+
+/* ----------------------------------- */
 
 void print_matrix(double *matrix, int rows, int cols) {
     int i, j;
@@ -43,6 +53,10 @@ void print_matrix(double *matrix, int rows, int cols) {
     }
 }
 
+/* ----------------------------------- */
+
 void free_matrix(double *matrix) {
     free(matrix);
 }
+
+/* ----------------------------------- */

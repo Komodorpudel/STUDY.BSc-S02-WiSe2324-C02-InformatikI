@@ -2,6 +2,8 @@
 #include "smatrix.h"
 #include <stdio.h>
 
+/* ----------------------------------- */
+
 int main() {
     int rows = 3, cols = 3;
     double *matrix = allocate_matrix(rows, cols);
@@ -27,3 +29,5 @@ int main() {
 
     return 0;
 }
+
+/* ----------------------------------- */
