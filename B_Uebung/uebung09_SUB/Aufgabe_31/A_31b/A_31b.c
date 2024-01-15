@@ -20,9 +20,11 @@ int main(void)
 
     printf("f: %i; c: %i", f, c);
 
+    return 0;
+
 }
 
-int floor_and_ceil (double x, int *f, int *c)
+int floor_and_ceil(double x, int *f, int *c)
 {
 
     if (f == NULL || c == NULL) {
@@ -33,7 +35,7 @@ int floor_and_ceil (double x, int *f, int *c)
         *f = floor(x);
         *c = ceil(x);
 
-    return 0;
+        return 0;
 
     }
 

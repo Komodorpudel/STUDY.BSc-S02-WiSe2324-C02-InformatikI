@@ -3,7 +3,7 @@
 #include <time.h>
 
 /* Prototypem */
-void gross_minus_klein (int *x, int *y);
+void gross_minus_klein(int *x, int *y);
 
 int main(void) {
 
@@ -25,9 +25,11 @@ int main(void) {
 
     printf("x: %i; y: %i", x, y);
 
+    return 0;
+
 }
 
-void gross_minus_klein (int *x, int *y){
+void gross_minus_klein(int *x, int *y){
 
     if (*x > *y){
         *x = *x - *y;

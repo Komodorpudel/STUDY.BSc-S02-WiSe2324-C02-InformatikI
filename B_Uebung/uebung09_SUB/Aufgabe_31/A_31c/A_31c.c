@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int read_probability(double *probability) {
+int read_probability(double *probability)
+{
 
     double in;
     int c;
