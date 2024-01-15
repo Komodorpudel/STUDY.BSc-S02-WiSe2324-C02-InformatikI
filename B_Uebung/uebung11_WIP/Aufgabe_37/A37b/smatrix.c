@@ -1,4 +1,3 @@
-/* smatrix.c */
 #include "smatrix.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -32,7 +31,7 @@ double *create_identity_matrix(int size) {
 
 /* ----------------------------------- */
 
-void swap_rows(double *matrix, int rows, int cols, int row1, int row2) {
+void swap_rows(double *matrix, int cols, int row1, int row2) {
     int j;
     for (j = 0; j < cols; j++) {
         double temp = matrix[row1 * cols + j];

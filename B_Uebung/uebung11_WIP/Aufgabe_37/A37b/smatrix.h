@@ -14,7 +14,7 @@ double *access_matrix(double *matrix, int rows, int i, int j);
 double *create_identity_matrix(int size);
 
 /* Funktion für Zeilentausch */
-void swap_rows(double *matrix, int rows, int cols, int row1, int row2);
+void swap_rows(double *matrix, int cols, int row1, int row2);
 
 /* Funktion für Ausgabe */
 void print_matrix(double *matrix, int rows, int cols);
