@@ -11,7 +11,7 @@ unsigned long int multiply(unsigned int a, unsigned int b) {
 
 	while (b > 0) {
 
-		/* Wenn ungerade */
+		/* Bitoperation: Wenn ungerade */
 		if (b & 1) {
 			result = result + a;
 		}
@@ -54,7 +54,7 @@ int main(void) {
 	printf("Russische Bauernmultiplikation\n");
 
 	a = liesZahl();
-	b= liesZahl();
+	b = liesZahl();
 	result = multiply(a, b);
 
     printf("Das Produkt von %u und %u ist %lu.\n", a, b, result);
