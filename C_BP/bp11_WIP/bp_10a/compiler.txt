@@ -1,7 +1,159 @@
 gcc -ansi -pedantic -Wall -Wextra -o program bp10a.c
 
-gcc bp10a.c -o program -g
+1.gcc bp10a.c -o program -g
 
-gdb program
 
 ./program
+
+-----------------------------------------------------------------
+1. Kompilieren Sie die Datei bp10a.c mit Debugging-Symbolen.
+
+gcc bp10a.c -o program -g
+
+
+-----------------------------------------------------------------
+2. Starten Sie den Debugger mit dem erzeugten Maschinencode.
+
+lldb program -> Debugger starten
+
+-----------------------------------------------------------------
+3. Starten Sie einen Programmdurchlauf im Debugger und erkl¨aren Sie die Ausgabe.
+
+run -> code ausführen
+
++++++
+
+Process launched 
+
+Ausgabe
+
+Process Exit mit Status
+
+-----------------------------------------------------------------
+4. Setzen Sie einen Breakpoint in der Funktion search_unsorted, so dass der Programmablauf zu Beginn jeder Iteration unterbrochen wird.
+
+b bp10a.c:31 -> Breakpoint am Anfang von Zeile 31 setzen
+
+-----------------------------------------------------------------
+5. Lassen Sie sich in jedem Schleifendurchlauf den aktuellen Wert von a[i] ausgeben.
+Tipp: In print-Befehlen kann Feldindizierung und Pointer-Schreibweise wie in C-Code verwendet werden.
+
+1.
+p a[i]
+continue
+
+2.
+p a[i]
+continue
+
+3.
+p a[i]
+continue
+
+4.
+p a[i]
+continue
+
+5.
+p a[i]
+continue
+
+6.
+p a[i]
+continue
+
+7.
+p a[i]
+continue
+
+8.
+p a[i]
+continue
+
+9.
+p a[i]
+continue
+
+10.
+p a[i]
+continue
+
+-----------------------------------------------------------------
+6. L¨oschen Sie den gesetzten Breakpoint.
+
+b -> Übersicht Breakpoints
+
+br del 1 -> Breakpoint mit Index 1 löschen
+
+-----------------------------------------------------------------
+7. Setzen Sie einen Watchpoint auf die lokale Variable max in der Funktion laufen Sie das Programm komplett und erkl¨aren Sie die Ausgabe des GDB bei jeder Unterbrechung.
+
+w l -> Liste der Watchpoints
+
+b bp10a.c:51  -> Breakpoint nachdem variable max gesetzt
+
+w s v max -> Watchpoint auf max setzen
+
+-----------------------------------------------------------------
+8. L¨oschen Sie alle Breakpoints und setzen Sie einen neuen Breakpoint bei Aufruf der Funktion array_swap. Starten Sie das Programm neu.
+
+br del -> Alle Breakpoints löschen
+
+b bp10a.c:73 -> Break auf Zeile von array_swap
+b -n array_swap -> Smartere Lösung
+
+run -> program starten
+
+-----------------------------------------------------------------
+9. Lassen Sie sich bei der ersten Programmunterbrechung einen Backtrace ausgeben, erkl¨aren Sie die Ausgabe und brechen Sie die Programmausfuhrung komplett ab. ¨
+
+bt -> Backtrace
+kill  -> Laufendes Program beenden
+
+-----------------------------------------------------------------
+10. Lassen Sie sich eine Ubersicht ¨ uber alle momentan gesetzten Breakpoints ausgeben. ¨
+
+bt -> Alle Backtraces ausgeben
+
+-----------------------------------------------------------------
+11. Deaktivieren Sie alle vorhandenen Breakpoints und setzen Sie einen neuen Breakpoint auf die Funktion array_print.
+
+b -> Übersicht Breakpoints
+
+br dis 3 -> Breakpoint 3 disabled
+
+b -n array_print -> Breakpoint bei array_print
+
+-----------------------------------------------------------------
+12. Starten Sie einen neuen Programmdurchlauf und durchlaufen Sie Ihr Programm ab Breakpoint Zeile fur Zeile, wobei Sie... ¨
+• Funktionsaufrufe als eine Zeile abarbeiten.
+• Funktionsaufrufe ebenfalls Zeile fur Zeile abarbeiten. ¨
+Erkl¨aren Sie den Unterschied zwischen beiden Varianten und beschleunigen Sie den Programmablauf nach wenigen Durchl¨aufen durch gezielte Verwendung von finish.
+
+run -> Code starten
+
+next -> Funktionsaufrufe als ganzes
+step -> Funktionsaufrufe zeile für zeile
+
+-----------------------------------------------------------------
+13. L¨oschen Sie alle Breakpoints. Setzen Sie einen bedingten Breakpoint in Zeile 17, der nur verwendet wird, falls der Wert der Variable suchzahl gr¨oßer als 10 ist.
+
+b -> Übersicht Breakpoints
+br del -> Alle Breakpoints löschen
+
+br s -f bp10a.c -l 17 -c 'suchzahl > 10' -> Breakpoint set file, line, condition
+
+-----------------------------------------------------------------
+14. Starten Sie einen neuen Programmdurchlauf und setzen Sie den Wert der Variable suchzahl am Breakpoint auf 3. Lassen Sie das Programm nun bis zum Ende durchlaufen.
+
+run -> Code starten
+
+expr suchzahl = 3 -> Variable suchzahl auf 3
+
+continue -> Bis Ende durchlaufen lassen
+
+-----------------------------------------------------------------
+15. Geschafft! Beenden Sie schließlich den Debugger.
+
+quit
+
