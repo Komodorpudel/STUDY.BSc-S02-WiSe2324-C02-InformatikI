@@ -10,15 +10,9 @@
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "externalConsole": false,
-            "MIMode": "gdb",
+            "MIMode": "lldb",
             "preLaunchTask": "",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ]
+            // You can add LLDB specific setup commands if needed
         }
     ]
 }

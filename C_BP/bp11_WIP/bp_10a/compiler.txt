@@ -2,4 +2,6 @@ gcc -ansi -pedantic -Wall -Wextra -o program bp10a.c
 
 gcc bp10a.c -o program -g
 
+gdb program
+
 ./program
