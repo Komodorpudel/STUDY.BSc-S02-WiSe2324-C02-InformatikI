@@ -1,0 +1,5 @@
+gcc -ansi -pedantic -Wall -Wextra -o bp10b_korr bp10b_korr.c
+
+
+
+./bp10b_korr

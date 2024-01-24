@@ -2,21 +2,25 @@
 Fehler in read_string:
 
 1.
-gcc bp10b.c -o program -g  -> Datei compilieren
+gcc bp10b.c -o bp10b -g  -> Datei compilieren
 
 2.
-lldb program
+lldb bp10b
 
 3. breakpoint bei read string
 b -n read_string
 
-run
+run 
+bzw.
+process launch -i input.txt
 
 step
 
 p i
 
 step
+
+p i
 
 step
 
