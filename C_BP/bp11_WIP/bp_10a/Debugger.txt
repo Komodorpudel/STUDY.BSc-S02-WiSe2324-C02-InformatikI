@@ -36,6 +36,8 @@ b bp10a.c:31 -> Breakpoint am Anfang von Zeile 31 setzen
 5. Lassen Sie sich in jedem Schleifendurchlauf den aktuellen Wert von a[i] ausgeben.
 Tipp: In print-Befehlen kann Feldindizierung und Pointer-Schreibweise wie in C-Code verwendet werden.
 
+run
+
 1.
 p a[i]
 continue
@@ -92,6 +94,8 @@ b bp10a.c:51  -> Breakpoint nachdem variable max gesetzt
 
 w s v max -> Watchpoint auf max setzen
 
+Erklärung: Stopt jedes mal wenn max geändert (hier durch die Loop) wird und Zeigt auf Zeile danach
+
 -----------------------------------------------------------------
 8. L¨oschen Sie alle Breakpoints und setzen Sie einen neuen Breakpoint bei Aufruf der Funktion array_swap. Starten Sie das Programm neu.
 
@@ -100,19 +104,25 @@ br del -> Alle Breakpoints löschen
 b bp10a.c:73 -> Break auf Zeile von array_swap
 b -n array_swap -> Smartere Lösung
 
+b -> Übersicht aller Breakpoints
+
 run -> program starten
 
 -----------------------------------------------------------------
 9. Lassen Sie sich bei der ersten Programmunterbrechung einen Backtrace ausgeben, erkl¨aren Sie die Ausgabe und brechen Sie die Programmausfuhrung komplett ab. ¨
 
 bt -> Backtrace
+
+Erklärung:
+Gibt mir die Ebenen (frame) der Funktionsaufrufe aus:
+array_swap aus waswahlsort aus main
+
 kill  -> Laufendes Program beenden
 
 -----------------------------------------------------------------
 10. Lassen Sie sich eine Ubersicht ¨ uber alle momentan gesetzten Breakpoints ausgeben. ¨
 
-bt -> Alle Backtraces ausgeben
-
+b -> Alle Breakpoints ausgeben
 -----------------------------------------------------------------
 11. Deaktivieren Sie alle vorhandenen Breakpoints und setzen Sie einen neuen Breakpoint auf die Funktion array_print.
 
@@ -133,13 +143,15 @@ run -> Code starten
 next -> Funktionsaufrufe als ganzes
 step -> Funktionsaufrufe zeile für zeile
 
+finish -> Aktuelle Methode komplett ausführen
+
 -----------------------------------------------------------------
 13. L¨oschen Sie alle Breakpoints. Setzen Sie einen bedingten Breakpoint in Zeile 17, der nur verwendet wird, falls der Wert der Variable suchzahl gr¨oßer als 10 ist.
 
 b -> Übersicht Breakpoints
 br del -> Alle Breakpoints löschen
 
-br s -f bp10a.c -l 17 -c 'suchzahl > 10' -> Breakpoint set file, line, condition
+br s -f bp10a.c -l 18 -c 'suchzahl > 10' -> Breakpoint set file, line, condition
 
 -----------------------------------------------------------------
 14. Starten Sie einen neuen Programmdurchlauf und setzen Sie den Wert der Variable suchzahl am Breakpoint auf 3. Lassen Sie das Programm nun bis zum Ende durchlaufen.
@@ -147,6 +159,8 @@ br s -f bp10a.c -l 17 -c 'suchzahl > 10' -> Breakpoint set file, line, condition
 run -> Code starten
 
 expr suchzahl = 3 -> Variable suchzahl auf 3
+
+p suchzahl -> Prüfen ob wirklich auf 3 
 
 continue -> Bis Ende durchlaufen lassen
 

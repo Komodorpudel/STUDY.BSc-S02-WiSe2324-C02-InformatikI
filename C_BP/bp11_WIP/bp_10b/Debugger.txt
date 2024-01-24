@@ -1,5 +1,5 @@
-
-
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Fehler in read_string:
 
 1.
 gcc bp10b.c -o program -g  -> Datei compilieren
@@ -22,5 +22,29 @@ step
 
 step 
 
+p i
+
 p in[i]
 
+p in[0] -> Zeigt immernoch T von Test
+
+continue
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Fehler in reverse:
+
+b -> Breakpoints anschauen
+
+br dis 1
+
+b -n reverse
+
+step
+
+step
+
+print n -> Die Länge des Strings
+
+print i -> 0
+
+print (n-i) -> Bei n=4 und i = 0 kommt 4 raus, es sollte aber 3 rauskommen

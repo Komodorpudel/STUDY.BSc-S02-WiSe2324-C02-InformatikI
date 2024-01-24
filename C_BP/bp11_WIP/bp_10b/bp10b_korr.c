@@ -48,6 +48,6 @@ void reverse(char w[])
 {
 	int i;
 	int n = strlen(w);
-	for (i = 0; i <= n / 2 - 1; ++i)
-		array_swap(w, i, n - i - 1); /* n - i -1; wie somnst will ich den letzten swappen? */
+	for (i = 0; i <= n / 2 - 1; ++i) 
+		array_swap(w, i, n - 1 - i); /* n - i -1; wie somnst will ich den letzten swappen? n ist die Länge. ich muss davon min eins abzeiehn und dann weiterrechnen */
 }

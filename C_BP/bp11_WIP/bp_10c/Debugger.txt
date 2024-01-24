@@ -1,0 +1,62 @@
+1.
+gcc bp10c.c -o program -g  -> Datei compilieren
+
+2. debugger starten
+lldb program
+
+3. Breakpoint bei main setzen
+b -n main
+
+b -> Übersicht aktueller Breakpoints
+
+4. Code starten mit Parameter
+run 12345
+
+5. Analyse
+
+step
+
+step
+
+p number -> Wir erkennen das er die Zahl falsch speichert. -> atoi verwenden
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+++++++++++++++++++++++++++++
+
+5. Zweite Methode checken: pretty_print
+
+b -n pretty_print -> Breakpoint bei pretty_print setzen
+
+
+6. code laufen lassen
+run 12345
+
+7. Analyse 
+
+step
+
+step
+
+p i
+
+p j -> j anpassen, sonst schwachsinn bei mehreren Argumenten
+!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Bedingung anpassen sonst bullshit weil Überlauf
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+dereferenzierung ja auch nicht korrekt: muss (*b)[i] sein
+
+++i zu +jj machen, sonst zähle ich ja nicht innerhalb meiner Zeichenkette hoch
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+
+
+
+gcc bp10c_korr.c -o program -g
+
