@@ -21,7 +21,7 @@ void pretty_print(int *a, char ***b) /* Hier geben wir einfach nur die Argv wied
 	int i;
 	size_t j;
 	for (i = 0; i < *a; ++i) {
-		for (j = i; j <= strlen(*(b[i])); ++i) /* 3. j ab 0 inkrementieren und nicht nochmal i, 4. strlen erwartet Zeiger auf Anfang von Array, wir liefern aber Zeiger auf Zeiger, 5. ebenso < anstatt <= weil sonst Überlauf */
+		for (j = i; j <= strlen(*(b[i])); ++i) /* 2. j ab 0 inkrementieren und nicht nochmal i inkrementieren, 3. strlen erwartet Zeiger auf Anfang von Array, wir liefern aber Zeiger auf Zeiger, 4. ebenso < anstatt <= weil sonst Überlauf */
 			printf("%c", *(*(*b + i) + j)); /* besser: (*b)[i][j] */
 		printf("\n");
 	}

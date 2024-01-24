@@ -13,11 +13,8 @@ b -> Übersicht aktueller Breakpoints
 run 12345
 
 5. Analyse
-
 step
-
 step
-
 p number -> Wir erkennen das er die Zahl falsch speichert. -> atoi verwenden
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -25,9 +22,7 @@ p number -> Wir erkennen das er die Zahl falsch speichert. -> atoi verwenden
 ++++++++++++++++++++++++++++
 
 5. Zweite Methode checken: pretty_print
-
 b -n pretty_print -> Breakpoint bei pretty_print setzen
-
 
 6. code laufen lassen
 run 12345
@@ -48,7 +43,7 @@ Bedingung anpassen sonst bullshit weil Überlauf
 
 dereferenzierung ja auch nicht korrekt: muss (*b)[i] sein
 
-++i zu +jj machen, sonst zähle ich ja nicht innerhalb meiner Zeichenkette hoch
+++i zu +j machen, sonst zähle ich ja nicht innerhalb meiner Zeichenkette hoch
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
