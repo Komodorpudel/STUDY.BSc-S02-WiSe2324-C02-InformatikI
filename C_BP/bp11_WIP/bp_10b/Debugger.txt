@@ -1,0 +1,26 @@
+
+
+
+1.
+gcc bp10b.c -o program -g  -> Datei compilieren
+
+2.
+lldb program
+
+3. breakpoint bei read string
+b -n read_string
+
+run
+
+step
+
+p i
+
+step
+
+step
+
+step 
+
+p in[i]
+

@@ -1,9 +1,7 @@
 gcc -ansi -pedantic -Wall -Wextra -o program bp10a.c
 
-1.gcc bp10a.c -o program -g
+gcc bp10a.c -o program -g
 
-
-./program
 
 -----------------------------------------------------------------
 1. Kompilieren Sie die Datei bp10a.c mit Debugging-Symbolen.

@@ -34,8 +34,8 @@ int read_string(char in[])
 {
 	int i = 0;
 	char c = getchar();
-	while (c != '\n' && i++ < MAX_STRING - 1) {
-		in[i] = c;
+	while (c != '\n' && i < MAX_STRING - 1) { /* Hier kein i++ sonst kann ich nicht in[0] auslesen */
+		in[i++] = c;
 		c = getchar();
 	}
 	if (i == MAX_STRING - 1 && c != '\n')
@@ -49,5 +49,5 @@ void reverse(char w[])
 	int i;
 	int n = strlen(w);
 	for (i = 0; i <= n / 2 - 1; ++i)
-		array_swap(w, i, n - i);
+		array_swap(w, i, n - i - 1); /* n - i -1; wie somnst will ich den letzten swappen? */
 }
