@@ -3,7 +3,8 @@
 
 /* ----------------------------------------- */
 
-double minimalerBetrag(double a[], int n) {
+double minimalerBetrag(double a[], int n)
+{
     /* Ich kann die Lämge vom Array nicht nachträglich ermitteln, deswegen brauch ich die Info direkt */
 
     /* Initialize m with the absolute value of the first element */
@@ -22,7 +23,8 @@ double minimalerBetrag(double a[], int n) {
 /* ----------------------------------------- */
 
 /* Zum Testen: */
-int main() {
+int main()
+{
     double arr[] = {3.5, -4.1, 2.0, -1.3, 5.2}; /* Example array */
     int size = sizeof(arr) / sizeof(arr[0]); /* Calculate size of the array */
 

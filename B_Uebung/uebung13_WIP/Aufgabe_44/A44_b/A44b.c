@@ -2,7 +2,8 @@
 
 /* --------------------------------------- */
 
-int isSymmetric(double **matrix, int n) { /* Zeiger auf Zeiger */
+int isSymmetric(double **matrix, int n) /* Zeiger auf Zeiger */
+{ 
     int i, j;
     for (i = 0; i < n; ++i) {
         for (j = 0; j < n; ++j) {
@@ -16,7 +17,8 @@ int isSymmetric(double **matrix, int n) { /* Zeiger auf Zeiger */
 
 /* --------------------------------------- */
 
-int main() {
+int main()
+{
     int n = 3; /* Example size */
     double a[3][3] = {{1, 2, 3}, {2, 4, 5}, {3, 5, 6}}; /* Example matrix */
 

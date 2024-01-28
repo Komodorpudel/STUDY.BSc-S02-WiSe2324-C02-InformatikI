@@ -4,7 +4,8 @@
 /* ------------------------------------------------- */
 
 /* Jedes mal wenn ein Character aus s auch in t vorkommt, erhöhen wir c um 1 und brechen Suche ab für den jeweiligen Charakter aus s */
-int strspn_count(const char *s, const char *t) {
+int strspn_count(const char *s, const char *t)
+{
     int c = 0; /* Counter for occurrences */
     int i = 0;
     int j = 0;
@@ -37,7 +38,8 @@ int strspn_count(const char *s, const char *t) {
 
 /* ------------------------------------------------- */
 
-int main() {
+int main()
+{
     char s[] = "example string"; 
     char t[] = "aeiou";
 
