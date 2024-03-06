@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 
+/* Prototypen */
 int random_chars(char v[], char w[], int size);
 void print(char w[], int size);
 
@@ -21,7 +22,8 @@ int main(void)
 
     if (valid) {
         print(neu, 4);
-    } else {
+    }
+    else {
         printf("array doesn't only contain digits\n");
     }
 
@@ -48,17 +50,18 @@ int random_chars(char v[], char w[], int size)
     int i;
 
     /* Überprüfen ob alle Digits sind */
-    for (i = 0; i < size; ++i) {
+    for (i = 0; i < size; i++) {
         if (!isdigit(v[i])) {
             return 0;
         }
     }
 
+    /* Zufälliger Großbuchstabe bestimmen */
     for (i = 0; i < size; ++i) {
-        w[i] = rand() % (v[i] - '/') + 'A';
+        w[i] = 'A' + (rand() % (v[i] - '/'));
     }
 
-return 1;
+    return 1;
 
 }
 
