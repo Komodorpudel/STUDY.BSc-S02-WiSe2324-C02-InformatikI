@@ -15,9 +15,12 @@ int main () {
     return 0;
 }
 
-int is_element_of(int element,int array[], int array_len) {
+int is_element_of(int element,int array[], int array_len)
+{
 
-    for (int i = 0; i < array_len; i++) {
+    int i;
+    
+    for (i = 0; i < array_len; i++) {
 
         if (element == array[i]){
 

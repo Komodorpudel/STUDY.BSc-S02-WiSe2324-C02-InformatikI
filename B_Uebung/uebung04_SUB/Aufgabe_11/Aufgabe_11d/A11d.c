@@ -8,7 +8,8 @@ void print_array(int array[], int array_len);
 
 // ------------------------------------------------------------
 
-int main () {
+int main ()
+{
 
 
     // zwei Mengen, die disjunkt sind (also keine Elemente gemeinsam haben),
@@ -77,7 +78,8 @@ int main () {
 
 // ------------------------------------------------------------
 
-int set_union(int set1[], int set1_len, int set2[], int set2_len, int result[], int result_len) {
+int set_union(int set1[], int set1_len, int set2[], int set2_len, int result[], int result_len)
+{
 
     // Handelt ¨es sich bei set1 oder set2 um keine Mengen gem¨aß Aufgabenteil b) oder
     // ist result len kleiner als die Anzahl der Elemente in der Vereinigung,
@@ -128,16 +130,17 @@ int set_union(int set1[], int set1_len, int set2[], int set2_len, int result[], 
 
 // ------------------------------------------------------------
 
-int is_set(int array[], int array_len) {
+int is_set(int array[], int array_len)
+{
 
     int i = 0;
     int j = 0;
 
     for (i = 0; i < array_len; i++) {
 
-        for (j = 0; j < array_len; j++) {
+        for (j = i + 1; j < array_len; j++) {
 
-            if ( i != j && array[i] == array[j]) {
+            if (array[i] == array[j]) {
                 return 0;
             }
         }
@@ -149,7 +152,8 @@ int is_set(int array[], int array_len) {
 
 // ------------------------------------------------------------
 
-int is_element_of(int element,int array[], int array_len) {
+int is_element_of(int element,int array[], int array_len)
+{
 
     for (int i = 0; i < array_len; i++) {
 
@@ -167,7 +171,8 @@ int is_element_of(int element,int array[], int array_len) {
 
 // ------------------------------------------------------------
 
-void print_array(int array[], int array_len) {
+void print_array(int array[], int array_len)
+{
     printf("[ ");
 
     for (int i = 0; i < array_len; i++) {
