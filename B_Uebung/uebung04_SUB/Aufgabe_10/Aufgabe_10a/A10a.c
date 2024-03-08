@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <ctype.h>
+#include <ctype.h> /* Für isdigit() */
 
 void print_digit_array(char v[], int len_v) {
 
