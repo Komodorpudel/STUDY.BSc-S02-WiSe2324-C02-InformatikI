@@ -4,7 +4,8 @@
 // Functions
 int convert_to_base(int x, int base, char v[], int len_v);
 
-int main () {
+int main ()
+{
 
     int x = 31;
     int base = 32;
@@ -19,7 +20,8 @@ int main () {
 
 }
 
-int convert_to_base(int x, int base, char v[], int len_v) { // beachte, x und base werden als Kopien übergeben, v[] als Zeiger
+int convert_to_base(int x, int base, char v[], int len_v)
+{ // beachte, x und base werden als Kopien übergeben, v[] als Zeiger
 
     // ist die ubergebene Zahl ¨ x negativ, so soll die Funktion 0 zuruckgeben.
     if (x < 0) {
@@ -27,17 +29,16 @@ int convert_to_base(int x, int base, char v[], int len_v) { // beachte, x und ba
     };
 
     // Wird eine ungultige Basis ¨ ubergeben, so soll die Funktion 0 zur ¨ uckgeben.
-    if (base < 2) { // basis 1 wird nicht unterstüzt
+    if (base < 2) { // basis 1 wird nicht unterstützt
         return 0;
     };
 
-    // Ist das ubergebene Feld zu klein, um ¨ x in der Basis base darzustellen, soll ebenfalls 0
-    //    zuruckgegeben werden
-    if (x > (pow(base, len_v) - 1)) {
+    /* Ist das ubergebene Feld zu klein, um ¨ x in der Basis base darzustellen, soll ebenfalls 0 zuruckgegeben werden */
+    if (x > (pow(base, len_v) - 1)) { /*  */
         return 0;
     };
 
-    // Übergebenes Array mit 0en füllen (notwendig, weil theoretisch ein Array gefüllt mit 1en übergeben werden kann)
+    /* Übergebenes Array mit 0en füllen (notwendig, weil theoretisch ein Array gefüllt mit 1en übergeben werden kann) */
     for (int i = 0; i < len_v; i++) {
         v[i] = '0';
     }
