@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-// Functions
+// Prototypes
 void convert_to_base(int x, int base, char v[], int len_v);
 
 int main () {
 
-    int x = 2;
-    int base = 2;
-    char array[] = {'0', '0', '0', '0', '0', '0', '0', '0','\0'}; // Terminierer hinzufügt
-    int len = sizeof(array) / sizeof(array[0]) - 1;
+    int x = 2; /* Zahl die konvertiert werden soll */
+    int base = 2; /* Basis in die Konvertiert werden soll */
+    char array[] = {'0', '0', '0', '0', '0', '0', '0', '0','\0'}; /* Zielarray mit Terminierer */
+    int len = (sizeof(array) / sizeof(array[0])) - 1; /* Länge - 1 wegen terminierer */
 
     convert_to_base(x, base, array, len);
     printf("Result: %s", array);
@@ -17,7 +17,7 @@ int main () {
 
 }
 
-void convert_to_base(int x, int base, char v[], int len_v) { // beachte, x und base werden als Kopien übergeben, v[] als Zeiger
+void convert_to_base(int x, int base, char v[], int len_v) { /* beachte, x und base werden als Kopien übergeben, v[] als Zeiger */
 
     // Vorgehensweise wie in Skript
     int index = len_v - 1;
@@ -34,7 +34,7 @@ void convert_to_base(int x, int base, char v[], int len_v) { // beachte, x und b
             v[index] = 'A' + (digit - 10); // A = 10, B = 11, usw.
         }
 
-        x = x / base;
+        x = x / base; /* x ist int, daher ist das ganzzahlige Division */
         index--;
 
     }
