@@ -39,15 +39,15 @@ int get_bit_value_at(int pos, int x)
 {
 
     // Größe von x in Bits
-    int max_bit_pos = sizeof(x) * 8; // Sizeof gibt Bytes zurück
+    int max_bit_pos = sizeof(x) * 8; // Sizeof gibt Bytes zurück -> Umwandlung in bits
     int check_value = 1;
 
     if (pos < 0 || pos >= max_bit_pos) {
         return -1;
     }
 
-    x = x >> pos;
-
+    /* Wir verschieben x nach rechts um pos Stellen, und lesen dann den Wer n Pos 0 aus */
+    x = x >> pos; 
     return x & 1;
 
 }
@@ -68,6 +68,8 @@ void print_bit_sequence(int x)
 
 // ---------------
 
+
+/* Das ist nicht nach Aufgabenswtellung. Wir sollten keine Äquivalente Beschreibung der Implikation verwenden */
 int implication (int x, int y)
 {
 
