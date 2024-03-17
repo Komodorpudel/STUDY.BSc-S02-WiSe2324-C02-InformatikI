@@ -84,7 +84,7 @@ int main(void)
     int i;
 
     /* Initialisierung des Zufallsgenerators */
-    srand((unsigned) time(NULL)); 
+    srand(time(NULL)); 
 
     /* Initialisierung der Matrizen */
     matrix_init(matrix1, n);
@@ -105,7 +105,6 @@ int main(void)
     matrix_mult(matrix1, matrix2, n);
     printf("\nMatrix 1 * Matrix 2:\n");
     matrix_print(matrix1, n);
-
 
     return 0;
 
