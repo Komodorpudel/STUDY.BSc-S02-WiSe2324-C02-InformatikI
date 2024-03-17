@@ -3,17 +3,10 @@
 #include <stdlib.h>
 #include <limits.h>
 
-int main(void){
-
-}
-
 unsigned int my_interval_rand(unsigned int u, unsigned int o)
 {
-    int i;
     unsigned int min;
     unsigned int max;
-
-    srand(time(NULL));
 
     /* Min und Max finden */
     if (u > o){
@@ -61,3 +54,35 @@ unsigned int array_second_min(unsigned int w[], unsigned int n)
     return second_min;
 
 }
+
+/* --------------------------------------------- */
+
+int main(void)
+{
+    unsigned int numbers[10];
+    unsigned int i;
+    
+    srand(time(NULL));  // Initialisierung des Zufallszahlengenerators
+
+    array_init(numbers, 10, 100000, 999999);
+
+    /* Zeilenweise ausgeben */
+    printf("Zahlenfeld:\n");
+    for (i = 0; i < 10; i++) {
+        printf("%u\n", numbers[i]);
+    }
+
+    /* Zweitkleinster Wert speichern */
+    unsigned int second_min = array_second_min(numbers, 10);
+
+    /* Ausgeben, falls der Wert nicht UNIT_MAX ist */
+    if (second_min != UINT_MAX) {
+        printf("Zweitkleinstes Element: %u\n", second_min);
+    } else {
+        printf("Es gibt kein zweitkleinstes Element.\n");
+    }
+
+    return 0;
+}
+
+/* --------------------------------------------- */
