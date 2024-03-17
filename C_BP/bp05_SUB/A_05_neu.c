@@ -40,12 +40,12 @@ void array_init(unsigned int w[], unsigned int n, unsigned int u, unsigned int o
 
 unsigned int array_second_min(unsigned int w[], unsigned int n)
 {
-    unsigned int first_min = UNIT_MAX;
-    unsigned int second_min = UNIT_MAX;
+    unsigned int first_min = UINT_MAX;
+    unsigned int second_min = UINT_MAX;
     int i;
 
     if (n < 2){
-        return UNIT_MAX;
+        return UINT_MAX;
     }
 
     for(i = 0; i < n; i++) {
