@@ -4,10 +4,11 @@
 
 int main() {
     
+    char c;
     // Zufallszahl generieren und speichern
-    srand((unsigned int)time(NULL));
+    srand(time(NULL));
 
-    char c = rand() % 128;
+    c = rand() % 128;
 
     printf("random character: %c\n", c);
 

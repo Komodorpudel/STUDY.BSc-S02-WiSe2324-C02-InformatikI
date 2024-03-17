@@ -10,10 +10,10 @@ int main() {
     int index;
     double zwischen;
 
-    srand((unsigned int)time(NULL));
+    srand(time(NULL));
 
-    //int myNumber = rand() % 10;
-    myNumber = 8;
+    myNumber = rand() % 10;
+    //myNumber = 8;
 
     index = 1;
 

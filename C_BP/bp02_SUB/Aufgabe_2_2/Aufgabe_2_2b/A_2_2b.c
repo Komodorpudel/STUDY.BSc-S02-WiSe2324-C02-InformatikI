@@ -5,7 +5,7 @@
 int main() {
     
     // Zufallszahl generieren und speichern
-    srand((unsigned int)time(NULL));
+    srand(time(NULL));
 
     int a = rand();
 

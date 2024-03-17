@@ -15,6 +15,7 @@ int main ()
 
 int sum_even (int n, int m)
 {
+    /* Deklarieren und initialisieren */
     int sum = 0;
     int start = 0;
     int end = 0;

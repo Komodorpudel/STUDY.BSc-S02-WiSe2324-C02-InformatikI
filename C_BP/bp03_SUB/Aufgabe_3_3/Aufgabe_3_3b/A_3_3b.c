@@ -3,7 +3,8 @@
 // Functions
 double power3(int n);
 
-int main () {
+int main ()
+{
 
     int i = -10;
 
@@ -15,7 +16,8 @@ int main () {
     return 0;
 }
 
-double power3(int n) {
+double power3(int n)
+{
     int exponent = n;
     int zahl = 3;
     double ergebnis = 1;

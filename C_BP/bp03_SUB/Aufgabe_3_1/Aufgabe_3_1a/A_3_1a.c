@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 int main() {
 
     int number = 1;
@@ -11,15 +10,7 @@ int main() {
         // Columns
         for (int j = 1; j < 8; j++) {
 
-            printf("%i", number);
-
-            if (number < 10) {
-                printf("    ");
-            }
-
-            else {
-                printf("   ");
-            }
+            printf("%i\t", number);
 
             number++;
 

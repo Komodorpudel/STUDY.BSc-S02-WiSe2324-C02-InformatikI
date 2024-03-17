@@ -4,23 +4,20 @@
 
 int main() {
     
+    int i;
+
     // Zufallszahl generieren und speichern
     srand((unsigned int)time(NULL));
 
-    int i = rand() % 40001;
+    i = rand() % 40001;
 
     printf("my int: %i\n", i);
 
-    
     if ( i <= 20000) {
-
         printf("Teilbar durch 5?\n");
         if (i % 5 == 0) {
-
             printf ("0");
-
         }
-
         else {
             printf("1");
         }
@@ -31,7 +28,7 @@ int main() {
 
     }
 
-    printf("\nEnde");
+    printf("\nEnde\n");
 
     return 0;
 

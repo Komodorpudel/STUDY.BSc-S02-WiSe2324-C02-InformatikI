@@ -7,9 +7,9 @@ int main () {
 
     printf("DBL_MAX: %f\n", DBL_MAX);
 
-    printf("myDouble: %f", myDouble + 1);
+    printf("myDouble: %f", myDouble + DBL_MAX);
 
     return 0;
 
-    // DBL MAX ist der maximale double wert, daher ändert sich nichts
+    /* infinity darstellung */
 }

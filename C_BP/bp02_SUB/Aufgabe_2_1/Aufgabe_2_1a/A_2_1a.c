@@ -1,10 +1,11 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> /* für rand() */
+#include <time.h>
 
 int main() {
     
     // Zufallszahl generieren und speichern
-
+    srand(time(NULL));
     int number = rand() % 2000;
 
     // Ausgabe Zufallszahl und check ob zahl dreistellig
@@ -15,7 +16,7 @@ int main() {
     }
 
     else {
-        printf("numer is not three digit");
+        printf("number is not three digit");
     }
 
     return 0;

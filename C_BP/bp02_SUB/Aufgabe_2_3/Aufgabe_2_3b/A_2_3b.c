@@ -7,7 +7,6 @@ int main() {
     // dritte Potenz
     double x = 5.0;
     double y = pow (x,3);
-
     printf("Y: %e\n", y);
 
     // Tagens
@@ -26,20 +25,17 @@ int main() {
 
     // Wert der Exponentialfunktion
     printf("Exp:\n");
-    printf("%f\n", pow(M_E, 11));
+    printf("%f\n", exp( 11));
 
     // kleinsten ganzzahligen Wert
     printf("Kleinster ganzzahliger Wert:\n");
-    double d = 2.5;
-    double square = pow(d,2);
-    int result = (int) square; // umwandeln in ganze Zahl (cuttet)
+    int result = ceil(pow(2.5,2)); // umwandeln in ganze Zahl (cuttet)
     printf("%i\n", result);
 
     // größten ganzzahligen Wert
     printf("groester ganzzahliger Wert:\n");
-    double l = log10(9999.0);
-    int li = (int) l;
-    printf("%e\n", l);
+    result = floor(log10(9999.0));
+    printf("%d\n", result);
 
     return 0;
 }

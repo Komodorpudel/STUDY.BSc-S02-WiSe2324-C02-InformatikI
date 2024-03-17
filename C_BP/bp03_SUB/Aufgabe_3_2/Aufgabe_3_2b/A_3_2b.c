@@ -11,7 +11,7 @@ int main() {
     int e;
 
     // random number to decrement
-    srand((unsigned int)time(NULL));
+    srand(time(NULL));
     c = rand() % 128;
 
     e = my_tolower(c);
@@ -24,8 +24,8 @@ int main() {
 
 double my_tolower (int c){
 
-    if (c > 64 && c < 91) {
-        return ('a' + (c - 65));
+    if (c >= 'A' && c <= 'Z') {
+        return ('a' + (c - 'A')); 
     }
     return c;
 

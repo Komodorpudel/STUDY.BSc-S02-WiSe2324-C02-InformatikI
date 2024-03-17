@@ -3,15 +3,19 @@
 #include <time.h>
 
 // Funktion, die negative Zufallswerte in ein Array einfügt
-void array_randneg(int a[], int size) {
-    for (int i = 0; i < size; i++) {
-        a[i] = -1 * ((rand()+1) % 100); // Generiert eine negative Zufallszahl
+void array_randneg(int a[], int size)
+{
+    int i;
+    for (i = 0; i < size; i++) {
+        a[i] = -1 * ((rand() +1 ) % 100); // Generiert eine negative Zufallszahl
     }
 }
 
 // Funktion, die überprüft, ob alle Werte in einem Array negativ sind
-int array_isneg(int a[], int size) {
-    for (int i = 0; i < size; i++) {
+int array_isneg(int a[], int size)
+{
+    int i;
+    for (i = 0; i < size; i++) {
         if (a[i] >= 0) {
             return 0;
         }
@@ -20,7 +24,8 @@ int array_isneg(int a[], int size) {
 }
 
 // Hauptprogramm
-int main() {
+int main()
+{
     srand(time(NULL)); // Initialisierung des Zufallszahlengenerators
 
     int size = 10;

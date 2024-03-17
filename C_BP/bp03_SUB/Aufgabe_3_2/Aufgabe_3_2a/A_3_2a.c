@@ -11,8 +11,8 @@ int main() {
     double e;
 
     // random number to decrement
-    srand((unsigned int)time(NULL));
-    d = ((rand() % 96) + 5) / 10;
+    srand(time(NULL));
+    d = ((rand() % 91) + 5) / 10;
 
     e = decrement(d);
 
