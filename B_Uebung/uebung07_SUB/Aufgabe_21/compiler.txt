@@ -2,3 +2,5 @@ gcc -ansi -pedantic -Wall -Wextra A_21.c -o A_21
 
 
 ./A_21 100.00 "USD" "EUR"
+
+./A_21_neu 100.00 DOLLAR EURO

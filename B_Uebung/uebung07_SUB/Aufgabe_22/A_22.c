@@ -76,7 +76,6 @@ int main(int argc, char *argv[]) {
             printf("%s ist ein Palindrom.\n", param);
         }
 
-
         /* Palindrome erstellen indem ich umgekehrtes Wort anhänge */
         else {
             /* Länge des Paramters  */

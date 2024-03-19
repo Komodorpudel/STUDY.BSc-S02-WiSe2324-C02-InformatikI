@@ -1,0 +1,4 @@
+gcc -ansi -pedantic -Wall -Wextra A_06_neu.c -o A_06_neu
+
+gcc -ansi -pedantic -Wall -Wextra A_06_neu.c -o A_06_neu
+

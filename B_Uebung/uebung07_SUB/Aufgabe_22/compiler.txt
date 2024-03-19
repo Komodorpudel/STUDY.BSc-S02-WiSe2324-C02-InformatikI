@@ -3,3 +3,7 @@ gcc -ansi -pedantic -Wall -Wextra A_22.c -o A_22
 
 ./A_22 Daniel
 ./A_22 lagerregal
+
+
+gcc -ansi -pedantic -Wall -Wextra A_22_neu.c -o A_22_neu
+./A_22_neu lagerregal
