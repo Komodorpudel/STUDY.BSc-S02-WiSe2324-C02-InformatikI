@@ -1,0 +1,7 @@
+gcc -ansi -pedantic -Wall -Wextra main.c -o main
+
+
+./main < eingabe_reihenfolge.txt
+./main < eingabe_keine_reihenfolge.txt
+
+./A23+A24 200
