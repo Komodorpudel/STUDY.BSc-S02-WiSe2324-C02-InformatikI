@@ -19,4 +19,9 @@
 #define EPS 1E-5 /* 1 * 10^(-5) */
 
 
+double distance(double p1[], double p2[]);
+int is_equal_up_to_error(double x, double y);
+int calculate_line(double p1[], double p2[], double g[]);
+int is_point_on_line(double p1[], double g[]);
+
 #endif

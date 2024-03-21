@@ -39,7 +39,8 @@ int calculate_line(double p1[], double p2[], double g[])
 
 /* ----------------------------------------------------- */
 
-int is_point_on_line(double p1[], double g[]){
+int is_point_on_line(double p1[], double g[])
+{
 
     double y = p1[X] * g[SLOPE] + g[YZERO];
 
