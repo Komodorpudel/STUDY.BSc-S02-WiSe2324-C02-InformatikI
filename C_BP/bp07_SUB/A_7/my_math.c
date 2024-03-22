@@ -14,7 +14,7 @@ double my_pow(double x, int y) {
 
     /* Domain Error */
     if (x == 0 && y <= 0) { /* Wir würden 0 durch irgendwas teilen */
-        errno = EDOM; /* errno stands for Error Number */
+        errno = EDOM; /* errno stands for Error Number und ist globale Variable */
         return 0.0;
     }
 
