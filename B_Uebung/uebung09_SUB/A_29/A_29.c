@@ -3,7 +3,7 @@
 #include <string.h>
 #include <time.h>
 
-/* Makros */
+/* Konstanten */
 #define VALID_INPUT 0
 #define INPUT_TOO_LONG 1
 #define INPUT_ERROR 2
@@ -35,6 +35,7 @@ int main (void) {
     pos_roboter[Y] = 1;
     srand(time(NULL));
 
+    /* Roboter und Apfel zufällig positionieren */
     do {
         pos_apfel[X] = 1 + rand() % 5 ;
         pos_apfel[Y] = 1 + rand() % 5;
@@ -43,7 +44,6 @@ int main (void) {
 
     /* Anweisung */
     printf("Du bist Roboter r, laufe zum Apfel a\n");
-
 
     /* Schritte einlesen solange bis am Ziel*/
     while (pos_roboter[X] != pos_apfel[X] || pos_roboter[Y] != pos_apfel[Y]) {
@@ -182,12 +182,10 @@ void darstellung (void) {
             else if (pos_roboter[X] == j && pos_roboter[Y] == i) {
                 printf("r ");
             }
-
             else {
                 printf("_ ");
             }
 
-            
         }
 
         printf("|\n");
