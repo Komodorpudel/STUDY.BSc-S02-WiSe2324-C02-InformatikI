@@ -32,8 +32,8 @@ int main () {
 
     /* ++++++++++++++++++++++++++++++++++ */
     /* (iv) Deklarieren Sie einen char-Zeiger p, der nirgendwo hin zeigt. */
-    char *p4;
-    char *p4 = NULL;
+    char *p4; /* Zeigt irgendwo hin */
+    char *p4 = NULL; /* Zeigt nirgendo hin */
 
 
     /* ++++++++++++++++++++++++++++++++++ */
@@ -67,13 +67,13 @@ int main () {
 /* ++++++++++++++++++++++++++++++++++ */
 /* (vii) Geben Sie den Prototypen einer Funktion fun an, die als Parameter zwei doubleWerte x und y gem¨aß des Call-By-Value-Prinzips erh¨alt und die einen double-Pointer zuruckgibt. ¨ */
 
-double* call_By_Value (double x, double y);
+double *call_By_Value (double x, double y);
 
 
 /* ++++++++++++++++++++++++++++++++++ */
 /* (viii) Geben Sie den Prototypen einer Funktion fun an, die als Parameter zwei doubleWerte x und y gem¨aß des Call-By-Reference-Prinzips erh¨alt und die einen doubleDoppelpointer zuruckgibt. ¨ */
 
-double** call_By_Value_2 (double x, double y);
+double **call_By_Reference (double *x, double *y);
 
 
 /* ++++++++++++++++++++++++++++++++++ */
@@ -83,7 +83,7 @@ char *w = "Hallo!";
 /* Welchen Wert hat der Ausdruck *w? */
 
 /* Antwort:
-*w hat den Wert 'h' */
+*w hat den Wert 'H' */
 }
 
 /* ++++++++++++++++++++++++++++++++++ */
@@ -111,7 +111,7 @@ char *p = w;
 /* Antwort:
 ++p erhöht den Zeiger selbst (x13 wird zu x14)
 *(++p) gibt mir den Wert 'a'
-'a' + 17 = 97 + 17 = 114
+'a' + 1 = 'b'
  */
 }
 
@@ -127,7 +127,7 @@ printf("[%i, %i, %i]", array[0], array[1], array[2]);
 /* Antwort:
 Die 3 wird zur 5,
 
-Ausgabe: 1, 2, 5
+Ausgabe: [1, 2, 5]
  */
 }
 
@@ -135,21 +135,13 @@ Ausgabe: 1, 2, 5
 /* ++++++++++++++++++++++++++++++++++ */
 int xiii (void) {
 /* (xiii) In die folgenden Anweisungen hat sich ein Fehler in der Benutzung von Zeigern oder Feldern eingeschlichten: */
-char v[] = "Informatik";
+char v[] = "Informatik"; /* btw: Zu Kompilierzeit muss größe bekannt sein */
 char w[] = v;
 /* Welcher? Was musste man ¨ ¨andern, damit das Programm funktioniert? */
 
 /* Antwort:
-/* Ich kann in C nicht ein Array direkt einem anderen Array zuweisen.
+/* Array muss initalisiert werden.
 Stattdessen: */
-
-#include <string.h>
-
-char v[] = "Informatik";
-char w[sizeof(v)]; 
-strcpy(w, v);
-
-/* Oder: */
 
 char v[] = "Informatik";
 char *w = v;
@@ -166,7 +158,7 @@ char* v;
 
 /* Antwort:
 
-v zeigt auf nichts weil nicht initialisiert. Lösung: */
+v zeigt auf irgendwas weil nicht initialisiert. Lösung: */
 char x;
 char* v = &x; /* v zeigt jetzt auf x */
 *v = 'x';     /* setzt x auf 'x' */
