@@ -37,7 +37,7 @@ void append_pointer(char *destination, char *source)
 {
     /* "\0" hat den Wahrheitswert falsch. */
     
-    /* Diese Schleife geht solange weiter bis wir bei dem Terminierer angekommen sind (oder einer leeren Adresse) */
+    /* Diese Schleife geht solange weiter bis wir bei dem Terminierer (Hat den Wert 0) angekommen sind (oder einer leeren Adresse NULL) */
     while (*destination) ++destination;
     /* Es spielt hier keine Rolle ob "++destination oder destination++" */
 
@@ -76,7 +76,7 @@ void append_pointer_2 (char *destination, char *source)
     /* Anhängen solange source nicht bei "\0" ist */
     while (*source != '\0') {
         *destination = *source;
-        destination = destination +1;
+        destination = destination + 1;
         source = source + 1;
     }
 
@@ -101,6 +101,25 @@ void append_array(char destination[], char source[]) {
         destination[i] = source[j];
         i = i +1;
         j = j + 1;
+    }
+
+    /* Terminieren */
+    destination [i] = '\0';
+
+}
+
+/* ++++++++++ 3. Überführung in Felder ++++++++++ */
+void append_array_short (char destination[], char source[]) {
+
+    int i;
+    int j;
+
+    /* Ans Ende von Destination gehen */
+
+    for(i = 0; destination[i] != '\0'; i++);
+
+    for(j = 0; source[j] != '\0'; j++){
+        destination[i++] = source[j];
     }
 
     /* Terminieren */

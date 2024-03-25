@@ -1,0 +1,7 @@
+gcc -ansi -pedantic -Wall -Wextra -o program A_9a_neu.c
+
+gcc -ansi -pedantic -Wall -Wextra -o program A_9b.c
+
+
+
+./program
