@@ -3,6 +3,8 @@
 
 #define EXIT_FAILURE 1
 
+/* Ich habe keine Überstruktur, weil ich sowieso immer nur Zugriff auf das erste Element habe */
+
 typedef struct _node {
     int element;
     struct _node *next; /* *next ist ein Zeiger auf struct _node */

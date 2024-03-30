@@ -4,16 +4,11 @@
 
 #include "stack.h"
 
-
 void stack_destroy(stack s);
 int is_empty(stack s);
 int stack_push(stack *s, int n);
 int stack_pop(stack *s); /* Aufdecken und löschen */
 int stack_top(stack s); /* nur aufdecken */
-
-
-
-
 
 /* ------------------------------- */
 /* Neues Element hinzufügen */
@@ -49,7 +44,6 @@ int stack_top(stack s)
 }
 
 /* ------------------------------- */
-
 int stack_pop(stack *s)
 {   /* Nun bekommenw wir einen Zeiger auf einen Zeiger, weil wir müssen den Zeiger umbiegen auf das Element eins drunter */
 
@@ -80,7 +74,6 @@ int stack_isempty(stack s)
 }
 
 /* ------------------------------- */
-
 void stack_destroy(stack s)
 {
     if (s != NULL){
@@ -94,7 +87,6 @@ void stack_destroy(stack s)
 }
 
 /* ------------------------------- */
-
 int main(void)
 {
     stack my_stack = NULL;
@@ -120,3 +112,5 @@ int main(void)
     return 1;
 
 }
+
+/* ------------------------------- */
