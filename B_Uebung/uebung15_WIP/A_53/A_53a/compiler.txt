@@ -1,0 +1,7 @@
+gcc -ansi -pedantic -Wall -Wextra -o program arraylist.c
+
+gcc -ansi -pedantic -Wall -Wextra -o program main.c isbn_utils.c random_utils.c
+
+
+
+./program
