@@ -44,6 +44,18 @@ void tree_print(tree root)
 }
 
 /* ------------------------------------ */
+tree tree_min(tree root)
+{
+    if (root == EMPTY_TREE) {
+        return EMPTY_TREE;
+    }
+    if (root->left == EMPTY_TREE) {
+        return root;
+    }
+    return tree_min(root->left);
+}
+
+/* ------------------------------------ */
 int main(void)
 {
     int i;

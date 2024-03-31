@@ -3,7 +3,7 @@
 
 /* ----------------------------------------- */
 
-double minimalerBetrag(double a[], int n)
+double minimalerBetrag(double a[], int n) /* immer besser [] notation zu verwenden in Methodenkopf, dann weiß man, das es Array ist und nicht nur Zeiger */
 {
     /* Ich kann die Lämge vom Array nicht nachträglich ermitteln, deswegen brauch ich die Info direkt */
 

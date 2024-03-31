@@ -21,7 +21,6 @@ int vergleicheStrings(const char *v, const char *w)
 }
 
 /* ------------------------------ */
-
 int main()
 {
     char v[] = "Test";

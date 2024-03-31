@@ -1,12 +1,11 @@
 #include <stdio.h>
 
 /* --------------------------------------- */
-
 int isSymmetric(double **matrix, int n) /* Zeiger auf Zeiger */
 { 
     int i, j;
-    for (i = 0; i < n; ++i) {
-        for (j = 0; j < n; ++j) {
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
             if (matrix[i][j] != matrix[j][i]) {
                 return 0; /* Not symmetric */
             }
@@ -37,7 +36,7 @@ int main()
     /* +++++++++ */
 
     /* Convert 2D array to a double pointer. */
-    double *matrix[3]; /* Deklariere matrix das 3 Zeiger enthällt */
+    double *matrix[3]; /* Deklariere matrix die 3 Zeiger enthält */
     for (int i = 0; i < n; i++) {
         matrix[i] = a[i];
     }
